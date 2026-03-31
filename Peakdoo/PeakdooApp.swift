@@ -1,17 +1,12 @@
-//
-//  PeakdooApp.swift
-//  Peakdoo
-//
-//  Created by Brian Anglin on 3/30/26.
-//
-
 import SwiftUI
 
 @main
 struct PeakdooApp: App {
+    @State private var appSettings = AppSettings()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(appSettings: appSettings)
         }
     }
 }
