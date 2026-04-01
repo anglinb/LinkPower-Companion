@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var bleManager = BLEManager()
+    @State private var demoSimulator: DemoDeviceSimulator?
+    @State private var demoViewModel: DashboardViewModel?
     let appSettings: AppSettings
 
     private var isConnected: Bool {
@@ -11,15 +13,44 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Group {
-                if let connection = bleManager.deviceConnection {
-                    DashboardView(viewModel: makeDashboardViewModel(connection: connection))
+                if appSettings.isDemoMode, let demoVM = demoViewModel {
+                    // Demo mode — no BLE required
+                    DashboardView(viewModel: demoVM, isDemoMode: true)
+                } else if let connection = bleManager.deviceConnection {
+                    // Real device connected
+                    DashboardView(viewModel: makeDashboardViewModel(connection: connection), isDemoMode: false)
                 } else {
-                    ConnectionView(viewModel: ConnectionViewModel(bleManager: bleManager))
+                    // Not connected — show connection screen
+                    ConnectionView(
+                        viewModel: ConnectionViewModel(bleManager: bleManager),
+                        onActivateDemo: activateDemo
+                    )
                 }
             }
             .animation(.spring(duration: 0.5, bounce: 0.2), value: isConnected)
+            .animation(.spring(duration: 0.5, bounce: 0.2), value: appSettings.isDemoMode)
         }
     }
+
+    // MARK: - Demo Mode
+
+    private func activateDemo() {
+        let simulator = DemoDeviceSimulator()
+        simulator.start()
+        demoSimulator = simulator
+
+        let vm = simulator.makeDashboardViewModel(appSettings: appSettings)
+        vm.onDisconnect = { [weak simulator] in
+            simulator?.stop()
+            demoSimulator = nil
+            demoViewModel = nil
+            appSettings.isDemoMode = false
+        }
+        demoViewModel = vm
+        appSettings.isDemoMode = true
+    }
+
+    // MARK: - Real Device ViewModel
 
     @MainActor
     private func makeDashboardViewModel(connection: BLEDeviceConnection) -> DashboardViewModel {

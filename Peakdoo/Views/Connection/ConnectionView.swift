@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ConnectionView: View {
     @Bindable var viewModel: ConnectionViewModel
+    var onActivateDemo: (() -> Void)?
     @State private var appeared = false
 
     var body: some View {
@@ -19,6 +20,13 @@ struct ConnectionView: View {
                 deviceSection
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 20)
+
+                // MARK: - Demo Mode
+                if let onActivateDemo {
+                    DemoModeButton(onActivate: onActivateDemo)
+                        .opacity(appeared ? 1 : 0)
+                        .offset(y: appeared ? 0 : 20)
+                }
 
                 // MARK: - Error
                 if let error = viewModel.connectionError {
@@ -213,9 +221,9 @@ struct ConnectionView: View {
 
 #Preview("Connection Screen") {
     NavigationStack {
-        ConnectionView(viewModel: {
-            let vm = ConnectionViewModel(bleManager: BLEManager())
-            return vm
-        }())
+        ConnectionView(
+            viewModel: ConnectionViewModel(bleManager: BLEManager()),
+            onActivateDemo: {}
+        )
     }
 }

@@ -17,6 +17,8 @@ final class AppSettings {
         didSet { UserDefaults.standard.set(devMode, forKey: "devMode") }
     }
 
+    var isDemoMode: Bool = false
+
     init() {
         let savedExpertMode = UserDefaults.standard.bool(forKey: "expertMode")
         let savedDevMode = UserDefaults.standard.bool(forKey: "devMode")

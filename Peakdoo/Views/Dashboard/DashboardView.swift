@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @Bindable var viewModel: DashboardViewModel
+    var isDemoMode: Bool = false
     @State private var appeared = false
     @State private var showSettingsMenu = false
 
@@ -69,6 +70,13 @@ struct DashboardView: View {
                 viewModel.saveTimer(timer)
             }
         }
+        .onAppear {
+            if isReady && !appeared {
+                withAnimation(.spring(duration: 0.8, bounce: 0.2)) {
+                    appeared = true
+                }
+            }
+        }
         .onChange(of: isReady) { _, ready in
             if ready && !appeared {
                 withAnimation(.spring(duration: 0.8, bounce: 0.2)) {
@@ -110,6 +118,23 @@ struct DashboardView: View {
     private var dashboardContent: some View {
         ScrollView {
             VStack(spacing: PeakdooTheme.sectionSpacing) {
+                // MARK: - Demo Mode Banner
+                if isDemoMode {
+                    HStack(spacing: 6) {
+                        Image(systemName: "play.circle.fill")
+                            .font(.caption)
+                        Text("Demo Mode")
+                            .font(.caption.weight(.semibold))
+                        Text("-- simulated device data")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                    .foregroundStyle(.orange)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(.orange.opacity(0.1), in: Capsule())
+                }
+
                 // MARK: - Battery gauge
                 if viewModel.deviceState.supportsBatteryCapacity {
                     if let battery = viewModel.batteryInfo {
