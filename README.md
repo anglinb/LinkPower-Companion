@@ -4,6 +4,28 @@ A native iOS companion app for [PeakDo](https://peakdo.ca) Link-Power portable b
 
 > **This is an unofficial, community-built application. It is not affiliated with, endorsed by, or supported by PeakDo Tech. Inc. Use at your own risk.**
 
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/connection-screen.png" width="200" alt="Connection Screen" />
+  <img src="screenshots/battery-dashboard.png" width="200" alt="Battery Dashboard" />
+  <img src="screenshots/dc-port-controls.png" width="200" alt="DC Port Controls" />
+</p>
+<p align="center">
+  <img src="screenshots/power-limits.png" width="200" alt="Power Limits" />
+  <img src="screenshots/timer-editor.png" width="200" alt="Timer Editor" />
+  <img src="screenshots/system-settings.png" width="200" alt="System Settings" />
+</p>
+
+| Screen | Description |
+|--------|-------------|
+| **Connection** | BLE scanning with demo mode option |
+| **Battery Dashboard** | Live battery level, capacity, voltage, current, and remaining time |
+| **DC Port Controls** | Toggle DC output, monitor power/voltage/current, bypass mode |
+| **Power Limits** | Configure global, input, output, and runtime USB-C power limits |
+| **Timer Editor** | Create scheduled on/off timers (one-shot, daily, weekly, monthly) |
+| **System Settings** | Device info, date sync, restart, and shutdown controls |
+
 ## Features
 
 - **BLE Device Connection** - Scan, connect, auto-reconnect to Link-Power devices (LP1, LP2, LP+)
