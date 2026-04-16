@@ -1,4 +1,4 @@
-# Peakdoo - Link-Power Companion App
+# PeakDo - Link-Power Companion App
 
 A native iOS companion app for [PeakDo](https://peakdo.ca) Link-Power portable battery devices. Built with SwiftUI and CoreBluetooth.
 

@@ -58,16 +58,12 @@ struct ConnectionView: View {
 
     @ViewBuilder
     private var heroSection: some View {
-        VStack(spacing: 8) {
-            Image(systemName: "bolt.shield.fill")
-                .font(.system(size: 56))
-                .foregroundStyle(.tint)
-                .symbolEffect(.pulse, options: .repeating, isActive: viewModel.isScanning)
+        VStack(spacing: 6) {
+            Text("PeakDo LinkPower Companion")
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .multilineTextAlignment(.center)
 
-            Text("Peakdoo")
-                .font(.system(size: 34, weight: .bold, design: .rounded))
-
-            Text("Link-Power Companion")
+            Text("Unofficial companion app")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
