@@ -1,4 +1,5 @@
 import SwiftUI
+import SuperwallKit
 
 struct DashboardView: View {
     @Bindable var viewModel: DashboardViewModel
@@ -35,8 +36,21 @@ struct DashboardView: View {
                 HStack(spacing: 4) {
                     // Settings menu
                     Menu {
-                        Toggle(isOn: Bindable(appSettings).expertMode) {
-                            Label("Expert Mode", systemImage: "gearshape.2")
+                        Button {
+                            if appSettings.expertMode {
+                                // Turning off is always free
+                                appSettings.expertMode = false
+                            } else {
+                                // Gate turning on behind Superwall paywall
+                                PaywallManager.gate(placement: PaywallManager.expertModePlacement) {
+                                    appSettings.expertMode = true
+                                }
+                            }
+                        } label: {
+                            Label(
+                                appSettings.expertMode ? "Disable Expert Mode" : "Expert Mode",
+                                systemImage: appSettings.expertMode ? "gearshape.2.fill" : "gearshape.2"
+                            )
                         }
 
                         if appSettings.expertMode {

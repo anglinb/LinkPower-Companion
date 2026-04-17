@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D3CA49002F7B2653002440BA /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3CA49022F7B2653002440BA /* SuperwallKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		D3CA48932F7B2654002440BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CA49002F7B2653002440BA /* SuperwallKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = Peakdoo;
 			packageProductDependencies = (
+				D3CA49022F7B2653002440BA /* SuperwallKit */,
 			);
 			productName = Peakdoo;
 			productReference = D3CA48852F7B2653002440BA /* Peakdoo.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = D3CA487C2F7B2653002440BA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D3CA49012F7B2653002440BA /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D3CA48862F7B2653002440BA /* Products */;
 			projectDirPath = "";
@@ -580,6 +589,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3CA49012F7B2653002440BA /* XCRemoteSwiftPackageReference "Superwall-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/superwall/Superwall-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3CA49022F7B2653002440BA /* SuperwallKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3CA49012F7B2653002440BA /* XCRemoteSwiftPackageReference "Superwall-iOS" */;
+			productName = SuperwallKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3CA487D2F7B2653002440BA /* Project object */;
 }
