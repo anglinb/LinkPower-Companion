@@ -7,342 +7,745 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3CA49002F7B2653002440BA /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3CA49022F7B2653002440BA /* SuperwallKit */; };
+		00C014D852CB8AAD2942C409 /* DCPortStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F02E56A844B68B61AF803D /* DCPortStatus.swift */; };
+		0650DBCD3A3792DFDB275F13 /* BatteryWidgetSharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824B9777C823144033CD2EB /* BatteryWidgetSharedStore.swift */; };
+		09B689197819CEE7A3BABC53 /* BLEDeviceConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD85CBC2CE15E0CBFB1843C /* BLEDeviceConnection.swift */; };
+		0CE99BA8AB4C4EFBC8B1C23C /* ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F991DF1063E375EE5DFD8335 /* ConnectionViewModel.swift */; };
+		15F2AFBE51471AA17019A9EB /* SystemInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CE8AD7212F4652E10E7A2C /* SystemInfoCard.swift */; };
+		1770B29043F9EDE394CD6AF2 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DC93FED6C2FD22EF1D151 /* TimerModel.swift */; };
+		1FEEF6A351B732A32B3D43E3 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3672A5B2296A287F7461AD /* AppSettings.swift */; };
+		20342A657A1FDC0DF8E3E5D7 /* PeakdooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E99AD5B5636A40D5C08522 /* PeakdooUITests.swift */; };
+		27FF545F1110E7DB25E9C012 /* PeakdooUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02950FB47C62D6661753B74D /* PeakdooUITestsLaunchTests.swift */; };
+		295DE0E3E28C250587136ADF /* TypeCPortStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C1BA634DD6D22BDFF51AC5 /* TypeCPortStatus.swift */; };
+		2A88E85BA7EA7E5FCC7E661E /* BatteryLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C34BDA86BF0519B5FE583E /* BatteryLiveActivity.swift */; };
+		2DC1299E4BE4613AB2132919 /* DCPortCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC3BBE43A73C3E2E088BEE3 /* DCPortCard.swift */; };
+		2FF91B45E6DBE03C6397B7AF /* BatteryDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0959AF272CE43A94BAC5EE2 /* BatteryDetailCard.swift */; };
+		30AB1F3DECE5C97CBC97617C /* DateTimeSyncCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F81F494505730989AEF98A /* DateTimeSyncCard.swift */; };
+		4BF5E869939DA9D60C54FD2C /* BLEDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508FD3632355A4360C1FD5E0 /* BLEDataParser.swift */; };
+		4D8076C440A44C1D7443EA29 /* BatteryGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EE83B4E971486FC729E32E /* BatteryGaugeView.swift */; };
+		59D066E3871EC14C8EC6759A /* TimerEditorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5D33C88EAE822A19CBD22 /* TimerEditorSheet.swift */; };
+		5D6AE8CEE4DBA5076A992893 /* AddWidgetTutorial.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D69C211F7B210F341FA972C3 /* AddWidgetTutorial.mp4 */; };
+		5E12D122C4D2B211E6E2F000 /* StatusBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554F32E698EDADC3F7DBA2B /* StatusBadgeView.swift */; };
+		5F168F3CBA6ED2E1AA07D5CD /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417A4012422E29E325C1FCE9 /* ConnectionView.swift */; };
+		61D469077DDCF764DFC21063 /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D060183568FA90E0F64E24F0 /* BatteryInfo.swift */; };
+		656177211A7AF6D724EFF912 /* BatteryWidgetSharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824B9777C823144033CD2EB /* BatteryWidgetSharedStore.swift */; };
+		66A66651B7321271B9046840 /* View+CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F489C7D5EFB79022EAF37BB /* View+CardStyle.swift */; };
+		67E5CD79329EC096C8A6D1FD /* DemoModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D313F12BBA5AD860940621 /* DemoModeButton.swift */; };
+		757DE589C51FB7B78500EFE0 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634D233BEB4E22A0B1975F99 /* DeviceState.swift */; };
+		7AD46E33463970EBA7F5A519 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8201895098522BE29F9792D2 /* DashboardView.swift */; };
+		7B9584D785CBC046A0E82B9B /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC8563F1DE17C52FEAE90000 /* SuperwallKit */; };
+		83016EAB486045652630BC61 /* PowerReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F665BB803D0A328389C7B2 /* PowerReadingView.swift */; };
+		8939C6527DEE23412F294519 /* PaywallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DBAC2EA5E3C23CC470BA2B /* PaywallManager.swift */; };
+		89DC1646C7F61274250747E2 /* PowerLimitSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DA72170C002A6330CAC57 /* PowerLimitSection.swift */; };
+		8D1BB205CCC9B0069E5CEC72 /* PeakdooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276C56C9066D91AE54425720 /* PeakdooTests.swift */; };
+		92E8373F969B88578B75E6C6 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A820B2CB909F95D8003BE4 /* DashboardViewModel.swift */; };
+		941C002F5A7C794D2592CA1B /* DeviceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721732461C2D984F046CAC1 /* DeviceRowView.swift */; };
+		971098486DC5081AF3A0834E /* BatteryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09172D4280519AA6CBAB83BE /* BatteryProvider.swift */; };
+		99FA115106C08B42AD117215 /* TypeCPortCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CAA08681A24DA3A55E77D7 /* TypeCPortCard.swift */; };
+		9A0958A4786B3F8BF15D2E00 /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A873659EB347421435CF62 /* CardContainerView.swift */; };
+		9AFF656957E452807765BA46 /* BatteryActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B796BD40460E71D9E77F0 /* BatteryActivityAttributes.swift */; };
+		A69A668882DC5DAC00DB0DF3 /* BatteryActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B796BD40460E71D9E77F0 /* BatteryActivityAttributes.swift */; };
+		B36D75C147750545BE0C7395 /* BatteryWidgetBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5BFBFCEC21E75C7A68F7B1 /* BatteryWidgetBridge.swift */; };
+		B4E0482B248E33F6E58AFCD7 /* AddWidgetTutorialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34F17B79BC22CB0F6470B74 /* AddWidgetTutorialSheet.swift */; };
+		BB3377DA649778FD7A81BC0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF2F5F5DFFD28CC1EC91A59 /* Assets.xcassets */; };
+		BCB2FA306C4BD2A2D4E41E93 /* PeakdooApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA94E543CE7C7D74EE60EF1 /* PeakdooApp.swift */; };
+		BE0BBF36E0E3F5D027990688 /* BatteryLiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3A3EFE026C0540A4504B51 /* BatteryLiveActivityManager.swift */; };
+		C5E1F4AFD2820D3D51747129 /* BatteryWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA0616BC817F8609964DAF /* BatteryWidgetBundle.swift */; };
+		C6C1DAD8D4AFFD4574C079FD /* PeakdooTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6477BB7E47508A8265F2105 /* PeakdooTheme.swift */; };
+		CA7FDE7873CD6260B3506268 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89219A88E5209DAAF2E933FE /* BLEManager.swift */; };
+		CBB857554436A999E64329BD /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E09966A0A1969E839FD8E /* SettingsSheet.swift */; };
+		D113926ADA4C8D7048511DE7 /* TimerListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B09809838F3627C6A28FE8 /* TimerListCard.swift */; };
+		D3C9D9DF6A2E20E74F64F07A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDADE9E7ED0A082E8DDB99 /* ContentView.swift */; };
+		D6363AC08C51603762DA060E /* Data+LittleEndian.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BEE172AE75EEB698C5172 /* Data+LittleEndian.swift */; };
+		D7DB3CC1F45D458FB5E63208 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517854FDA48A3AECD6AF446 /* DeviceModel.swift */; };
+		D852F75EDF291E63CD8FA6B9 /* Color+Peakdoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E52492EFCF74956FF14C6C7 /* Color+Peakdoo.swift */; };
+		E2EE34E19C7521AC1D68FCB1 /* OTAModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7CC51A00A7FE220DC31251 /* OTAModels.swift */; };
+		E3F87C8F3C1D8584A9288A94 /* PulsingDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3588634DA7B99EFEA056F6A9 /* PulsingDotView.swift */; };
+		E5DF50D53B4A3C7241C5D392 /* BLEProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA54A823B155A6A0A442E6 /* BLEProtocol.swift */; };
+		E945959C34854DC9E786AEE5 /* BatteryWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6607069F44F7E3EFFA1E70B6 /* BatteryWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F1313B350B639F9C988D0650 /* BackgroundRefreshScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7691831ECCE66CB4C435965 /* BackgroundRefreshScheduler.swift */; };
+		F760FA7B5920CBD0F0BA4D8A /* BatteryWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75A9089F3FA790BEC37344 /* BatteryWidget.swift */; };
+		F8DA5D8F1FBD93C34A1E5C31 /* DemoDeviceSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E897A60525586B70B7D79F /* DemoDeviceSimulator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D3CA48932F7B2654002440BA /* PBXContainerItemProxy */ = {
+		1B98AD143CC6EAAA83F74226 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D3CA487D2F7B2653002440BA /* Project object */;
+			containerPortal = 8279A87E2C317C4996AD226A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D3CA48842F7B2653002440BA;
+			remoteGlobalIDString = B0F65BE48F5AF57FBC273309;
+			remoteInfo = BatteryWidget;
+		};
+		EF342D73D5C13F4A87FE9D31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8279A87E2C317C4996AD226A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A784A284ADD24431B908B6E8;
 			remoteInfo = Peakdoo;
 		};
-		D3CA489D2F7B2654002440BA /* PBXContainerItemProxy */ = {
+		EF4AC0E74E9FA0F5C8F933B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D3CA487D2F7B2653002440BA /* Project object */;
+			containerPortal = 8279A87E2C317C4996AD226A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D3CA48842F7B2653002440BA;
+			remoteGlobalIDString = A784A284ADD24431B908B6E8;
 			remoteInfo = Peakdoo;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D14B245825E7A9809A4BC2CE /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E945959C34854DC9E786AEE5 /* BatteryWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		D3CA48852F7B2653002440BA /* Peakdoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peakdoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3CA48922F7B2654002440BA /* PeakdooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeakdooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3CA489C2F7B2654002440BA /* PeakdooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeakdooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02950FB47C62D6661753B74D /* PeakdooUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakdooUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04F02E56A844B68B61AF803D /* DCPortStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCPortStatus.swift; sourceTree = "<group>"; };
+		04F665BB803D0A328389C7B2 /* PowerReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerReadingView.swift; sourceTree = "<group>"; };
+		09172D4280519AA6CBAB83BE /* BatteryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryProvider.swift; sourceTree = "<group>"; };
+		09EE83B4E971486FC729E32E /* BatteryGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryGaugeView.swift; sourceTree = "<group>"; };
+		11C34BDA86BF0519B5FE583E /* BatteryLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryLiveActivity.swift; sourceTree = "<group>"; };
+		22F81F494505730989AEF98A /* DateTimeSyncCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeSyncCard.swift; sourceTree = "<group>"; };
+		2721732461C2D984F046CAC1 /* DeviceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowView.swift; sourceTree = "<group>"; };
+		276C56C9066D91AE54425720 /* PeakdooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakdooTests.swift; sourceTree = "<group>"; };
+		28CAA08681A24DA3A55E77D7 /* TypeCPortCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCPortCard.swift; sourceTree = "<group>"; };
+		34B09809838F3627C6A28FE8 /* TimerListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListCard.swift; sourceTree = "<group>"; };
+		3517854FDA48A3AECD6AF446 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		3588634DA7B99EFEA056F6A9 /* PulsingDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsingDotView.swift; sourceTree = "<group>"; };
+		3BE916B058E611D0F95DB322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		417A4012422E29E325C1FCE9 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
+		4B75A9089F3FA790BEC37344 /* BatteryWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidget.swift; sourceTree = "<group>"; };
+		508FD3632355A4360C1FD5E0 /* BLEDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDataParser.swift; sourceTree = "<group>"; };
+		55DBAC2EA5E3C23CC470BA2B /* PaywallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallManager.swift; sourceTree = "<group>"; };
+		5CA94E543CE7C7D74EE60EF1 /* PeakdooApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakdooApp.swift; sourceTree = "<group>"; };
+		634D233BEB4E22A0B1975F99 /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
+		6607069F44F7E3EFFA1E70B6 /* BatteryWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = BatteryWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		69CE8AD7212F4652E10E7A2C /* SystemInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfoCard.swift; sourceTree = "<group>"; };
+		6DC679AF41716BBBD8D31431 /* PeakdooTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PeakdooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E52492EFCF74956FF14C6C7 /* Color+Peakdoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Peakdoo.swift"; sourceTree = "<group>"; };
+		6F489C7D5EFB79022EAF37BB /* View+CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CardStyle.swift"; sourceTree = "<group>"; };
+		76E99AD5B5636A40D5C08522 /* PeakdooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakdooUITests.swift; sourceTree = "<group>"; };
+		8201895098522BE29F9792D2 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		89219A88E5209DAAF2E933FE /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		9554F32E698EDADC3F7DBA2B /* StatusBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadgeView.swift; sourceTree = "<group>"; };
+		96E897A60525586B70B7D79F /* DemoDeviceSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDeviceSimulator.swift; sourceTree = "<group>"; };
+		997DC93FED6C2FD22EF1D151 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		9A5BFBFCEC21E75C7A68F7B1 /* BatteryWidgetBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidgetBridge.swift; sourceTree = "<group>"; };
+		9F8B796BD40460E71D9E77F0 /* BatteryActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryActivityAttributes.swift; sourceTree = "<group>"; };
+		A34F17B79BC22CB0F6470B74 /* AddWidgetTutorialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWidgetTutorialSheet.swift; sourceTree = "<group>"; };
+		AA3672A5B2296A287F7461AD /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		AB16FF92739EB2F00A45458D /* Peakdoo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Peakdoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7CC51A00A7FE220DC31251 /* OTAModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTAModels.swift; sourceTree = "<group>"; };
+		B8A820B2CB909F95D8003BE4 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		BB3A3EFE026C0540A4504B51 /* BatteryLiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryLiveActivityManager.swift; sourceTree = "<group>"; };
+		BCD85CBC2CE15E0CBFB1843C /* BLEDeviceConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDeviceConnection.swift; sourceTree = "<group>"; };
+		BEDDADE9E7ED0A082E8DDB99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C0959AF272CE43A94BAC5EE2 /* BatteryDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDetailCard.swift; sourceTree = "<group>"; };
+		C3D313F12BBA5AD860940621 /* DemoModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoModeButton.swift; sourceTree = "<group>"; };
+		CFF2F5F5DFFD28CC1EC91A59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D060183568FA90E0F64E24F0 /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
+		D62BEE172AE75EEB698C5172 /* Data+LittleEndian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+LittleEndian.swift"; sourceTree = "<group>"; };
+		D69C211F7B210F341FA972C3 /* AddWidgetTutorial.mp4 */ = {isa = PBXFileReference; path = AddWidgetTutorial.mp4; sourceTree = "<group>"; };
+		DBAA54A823B155A6A0A442E6 /* BLEProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEProtocol.swift; sourceTree = "<group>"; };
+		E1D735092DCB69CA4232CC25 /* Peakdoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Peakdoo.entitlements; sourceTree = "<group>"; };
+		E6477BB7E47508A8265F2105 /* PeakdooTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakdooTheme.swift; sourceTree = "<group>"; };
+		E6A873659EB347421435CF62 /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
+		E824B9777C823144033CD2EB /* BatteryWidgetSharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidgetSharedStore.swift; sourceTree = "<group>"; };
+		E8AA0616BC817F8609964DAF /* BatteryWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryWidgetBundle.swift; sourceTree = "<group>"; };
+		EB2DA72170C002A6330CAC57 /* PowerLimitSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerLimitSection.swift; sourceTree = "<group>"; };
+		EF1234C151DEF1C529FB7F20 /* PeakdooUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PeakdooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39E09966A0A1969E839FD8E /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
+		F3C1BA634DD6D22BDFF51AC5 /* TypeCPortStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCPortStatus.swift; sourceTree = "<group>"; };
+		F4D5D33C88EAE822A19CBD22 /* TimerEditorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEditorSheet.swift; sourceTree = "<group>"; };
+		F7691831ECCE66CB4C435965 /* BackgroundRefreshScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefreshScheduler.swift; sourceTree = "<group>"; };
+		F991DF1063E375EE5DFD8335 /* ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewModel.swift; sourceTree = "<group>"; };
+		FBC3BBE43A73C3E2E088BEE3 /* DCPortCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCPortCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		D3CA48872F7B2653002440BA /* Peakdoo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Peakdoo;
-			sourceTree = "<group>";
-		};
-		D3CA48952F7B2654002440BA /* PeakdooTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PeakdooTests;
-			sourceTree = "<group>";
-		};
-		D3CA489F2F7B2654002440BA /* PeakdooUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PeakdooUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		D3CA48822F7B2653002440BA /* Frameworks */ = {
+		3F2F5C233546C7B935087CFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3CA49002F7B2653002440BA /* SuperwallKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3CA488F2F7B2654002440BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3CA48992F7B2654002440BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				7B9584D785CBC046A0E82B9B /* SuperwallKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D3CA487C2F7B2653002440BA = {
+		00C5212A216C69600C7B5427 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				D3CA48872F7B2653002440BA /* Peakdoo */,
-				D3CA48952F7B2654002440BA /* PeakdooTests */,
-				D3CA489F2F7B2654002440BA /* PeakdooUITests */,
-				D3CA48862F7B2653002440BA /* Products */,
+				417A4012422E29E325C1FCE9 /* ConnectionView.swift */,
+				C3D313F12BBA5AD860940621 /* DemoModeButton.swift */,
+				2721732461C2D984F046CAC1 /* DeviceRowView.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		027DC040D7917CB4AD620317 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F991DF1063E375EE5DFD8335 /* ConnectionViewModel.swift */,
+				B8A820B2CB909F95D8003BE4 /* DashboardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1D6CE9D184A7AB4074B7875C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6607069F44F7E3EFFA1E70B6 /* BatteryWidget.appex */,
+				AB16FF92739EB2F00A45458D /* Peakdoo.app */,
+				6DC679AF41716BBBD8D31431 /* PeakdooTests.xctest */,
+				EF1234C151DEF1C529FB7F20 /* PeakdooUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		378B2BFD21780A4B72F3C142 /* BatteryWidget */ = {
+			isa = PBXGroup;
+			children = (
+				11C34BDA86BF0519B5FE583E /* BatteryLiveActivity.swift */,
+				09172D4280519AA6CBAB83BE /* BatteryProvider.swift */,
+				4B75A9089F3FA790BEC37344 /* BatteryWidget.swift */,
+				E8AA0616BC817F8609964DAF /* BatteryWidgetBundle.swift */,
+			);
+			path = BatteryWidget;
+			sourceTree = "<group>";
+		};
+		3BDA6895BC9F3E63F9E601E0 /* Peakdoo */ = {
+			isa = PBXGroup;
+			children = (
+				CFF2F5F5DFFD28CC1EC91A59 /* Assets.xcassets */,
+				BEDDADE9E7ED0A082E8DDB99 /* ContentView.swift */,
+				3BE916B058E611D0F95DB322 /* Info.plist */,
+				E1D735092DCB69CA4232CC25 /* Peakdoo.entitlements */,
+				5CA94E543CE7C7D74EE60EF1 /* PeakdooApp.swift */,
+				7E7F33596F6FC378EBFCA6C5 /* Design */,
+				7C0BA66C20067DE3EBF45EB8 /* Extensions */,
+				90D0BACF8872834331221320 /* Models */,
+				FF43D0317ADD1F574D8BFCCE /* Resources */,
+				E3C925FDBDBCCFF63C68A2E3 /* Services */,
+				57348B9086014996DAD4528D /* Shared */,
+				027DC040D7917CB4AD620317 /* ViewModels */,
+				E2F0050A411D8EDC616B8A66 /* Views */,
+			);
+			path = Peakdoo;
+			sourceTree = "<group>";
+		};
+		3DCAD126EA6896F97C9BBD8F /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A34F17B79BC22CB0F6470B74 /* AddWidgetTutorialSheet.swift */,
+				C0959AF272CE43A94BAC5EE2 /* BatteryDetailCard.swift */,
+				09EE83B4E971486FC729E32E /* BatteryGaugeView.swift */,
+				8201895098522BE29F9792D2 /* DashboardView.swift */,
+				22F81F494505730989AEF98A /* DateTimeSyncCard.swift */,
+				FBC3BBE43A73C3E2E088BEE3 /* DCPortCard.swift */,
+				EB2DA72170C002A6330CAC57 /* PowerLimitSection.swift */,
+				69CE8AD7212F4652E10E7A2C /* SystemInfoCard.swift */,
+				F4D5D33C88EAE822A19CBD22 /* TimerEditorSheet.swift */,
+				34B09809838F3627C6A28FE8 /* TimerListCard.swift */,
+				28CAA08681A24DA3A55E77D7 /* TypeCPortCard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		57348B9086014996DAD4528D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B796BD40460E71D9E77F0 /* BatteryActivityAttributes.swift */,
+				E824B9777C823144033CD2EB /* BatteryWidgetSharedStore.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5DB9382285AA3CD60CCC3EF3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E6A873659EB347421435CF62 /* CardContainerView.swift */,
+				04F665BB803D0A328389C7B2 /* PowerReadingView.swift */,
+				3588634DA7B99EFEA056F6A9 /* PulsingDotView.swift */,
+				9554F32E698EDADC3F7DBA2B /* StatusBadgeView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		62796F1FF02445FC40DB60DB /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				D69C211F7B210F341FA972C3 /* AddWidgetTutorial.mp4 */,
+			);
+			path = Tutorials;
+			sourceTree = "<group>";
+		};
+		7462FCECE561E91093C34E13 = {
+			isa = PBXGroup;
+			children = (
+				378B2BFD21780A4B72F3C142 /* BatteryWidget */,
+				3BDA6895BC9F3E63F9E601E0 /* Peakdoo */,
+				DA85A84FD94A9E895D9F84DC /* PeakdooTests */,
+				EB1AD58E263C91E4CA379B3F /* PeakdooUITests */,
+				1D6CE9D184A7AB4074B7875C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D3CA48862F7B2653002440BA /* Products */ = {
+		7C0BA66C20067DE3EBF45EB8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D3CA48852F7B2653002440BA /* Peakdoo.app */,
-				D3CA48922F7B2654002440BA /* PeakdooTests.xctest */,
-				D3CA489C2F7B2654002440BA /* PeakdooUITests.xctest */,
+				6E52492EFCF74956FF14C6C7 /* Color+Peakdoo.swift */,
+				D62BEE172AE75EEB698C5172 /* Data+LittleEndian.swift */,
+				6F489C7D5EFB79022EAF37BB /* View+CardStyle.swift */,
 			);
-			name = Products;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7E7F33596F6FC378EBFCA6C5 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				E6477BB7E47508A8265F2105 /* PeakdooTheme.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		90D0BACF8872834331221320 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA3672A5B2296A287F7461AD /* AppSettings.swift */,
+				D060183568FA90E0F64E24F0 /* BatteryInfo.swift */,
+				DBAA54A823B155A6A0A442E6 /* BLEProtocol.swift */,
+				04F02E56A844B68B61AF803D /* DCPortStatus.swift */,
+				3517854FDA48A3AECD6AF446 /* DeviceModel.swift */,
+				634D233BEB4E22A0B1975F99 /* DeviceState.swift */,
+				AF7CC51A00A7FE220DC31251 /* OTAModels.swift */,
+				997DC93FED6C2FD22EF1D151 /* TimerModel.swift */,
+				F3C1BA634DD6D22BDFF51AC5 /* TypeCPortStatus.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBB7186F78572AEDC524EF96 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F39E09966A0A1969E839FD8E /* SettingsSheet.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DA85A84FD94A9E895D9F84DC /* PeakdooTests */ = {
+			isa = PBXGroup;
+			children = (
+				276C56C9066D91AE54425720 /* PeakdooTests.swift */,
+			);
+			path = PeakdooTests;
+			sourceTree = "<group>";
+		};
+		E2F0050A411D8EDC616B8A66 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5DB9382285AA3CD60CCC3EF3 /* Components */,
+				00C5212A216C69600C7B5427 /* Connection */,
+				3DCAD126EA6896F97C9BBD8F /* Dashboard */,
+				BBB7186F78572AEDC524EF96 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3C925FDBDBCCFF63C68A2E3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F7691831ECCE66CB4C435965 /* BackgroundRefreshScheduler.swift */,
+				BB3A3EFE026C0540A4504B51 /* BatteryLiveActivityManager.swift */,
+				9A5BFBFCEC21E75C7A68F7B1 /* BatteryWidgetBridge.swift */,
+				508FD3632355A4360C1FD5E0 /* BLEDataParser.swift */,
+				BCD85CBC2CE15E0CBFB1843C /* BLEDeviceConnection.swift */,
+				89219A88E5209DAAF2E933FE /* BLEManager.swift */,
+				96E897A60525586B70B7D79F /* DemoDeviceSimulator.swift */,
+				55DBAC2EA5E3C23CC470BA2B /* PaywallManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB1AD58E263C91E4CA379B3F /* PeakdooUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76E99AD5B5636A40D5C08522 /* PeakdooUITests.swift */,
+				02950FB47C62D6661753B74D /* PeakdooUITestsLaunchTests.swift */,
+			);
+			path = PeakdooUITests;
+			sourceTree = "<group>";
+		};
+		FF43D0317ADD1F574D8BFCCE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62796F1FF02445FC40DB60DB /* Tutorials */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D3CA48842F7B2653002440BA /* Peakdoo */ = {
+		75B1B4C891C5AFB55AA5CD25 /* PeakdooTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3CA48A62F7B2654002440BA /* Build configuration list for PBXNativeTarget "Peakdoo" */;
+			buildConfigurationList = 3E27DC5085044ABE494A35A0 /* Build configuration list for PBXNativeTarget "PeakdooTests" */;
 			buildPhases = (
-				D3CA48812F7B2653002440BA /* Sources */,
-				D3CA48822F7B2653002440BA /* Frameworks */,
-				D3CA48832F7B2653002440BA /* Resources */,
+				89C9B9424BD63B44C5AC1954 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				D3CA48872F7B2653002440BA /* Peakdoo */,
-			);
-			name = Peakdoo;
-			packageProductDependencies = (
-				D3CA49022F7B2653002440BA /* SuperwallKit */,
-			);
-			productName = Peakdoo;
-			productReference = D3CA48852F7B2653002440BA /* Peakdoo.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D3CA48912F7B2654002440BA /* PeakdooTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3CA48A92F7B2654002440BA /* Build configuration list for PBXNativeTarget "PeakdooTests" */;
-			buildPhases = (
-				D3CA488E2F7B2654002440BA /* Sources */,
-				D3CA488F2F7B2654002440BA /* Frameworks */,
-				D3CA48902F7B2654002440BA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D3CA48942F7B2654002440BA /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				D3CA48952F7B2654002440BA /* PeakdooTests */,
+				3882D55B3824E1228EE0C883 /* PBXTargetDependency */,
 			);
 			name = PeakdooTests;
 			packageProductDependencies = (
 			);
 			productName = PeakdooTests;
-			productReference = D3CA48922F7B2654002440BA /* PeakdooTests.xctest */;
+			productReference = 6DC679AF41716BBBD8D31431 /* PeakdooTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D3CA489B2F7B2654002440BA /* PeakdooUITests */ = {
+		76EBA670A55554DDDF56CA47 /* PeakdooUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3CA48AC2F7B2654002440BA /* Build configuration list for PBXNativeTarget "PeakdooUITests" */;
+			buildConfigurationList = 9703C6E5D537FBF670751C7E /* Build configuration list for PBXNativeTarget "PeakdooUITests" */;
 			buildPhases = (
-				D3CA48982F7B2654002440BA /* Sources */,
-				D3CA48992F7B2654002440BA /* Frameworks */,
-				D3CA489A2F7B2654002440BA /* Resources */,
+				F8440B8C683F46C4CB54CA9F /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D3CA489E2F7B2654002440BA /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				D3CA489F2F7B2654002440BA /* PeakdooUITests */,
+				3A52EF99CA61433EB07251DA /* PBXTargetDependency */,
 			);
 			name = PeakdooUITests;
 			packageProductDependencies = (
 			);
 			productName = PeakdooUITests;
-			productReference = D3CA489C2F7B2654002440BA /* PeakdooUITests.xctest */;
+			productReference = EF1234C151DEF1C529FB7F20 /* PeakdooUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		A784A284ADD24431B908B6E8 /* Peakdoo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF2B9A93310F8212BD3B193 /* Build configuration list for PBXNativeTarget "Peakdoo" */;
+			buildPhases = (
+				A37F8670E493198732170610 /* Sources */,
+				15CA8423146F3CDF0EB2962C /* Resources */,
+				3F2F5C233546C7B935087CFC /* Frameworks */,
+				D14B245825E7A9809A4BC2CE /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10621C8B147396EEA8A245FA /* PBXTargetDependency */,
+			);
+			name = Peakdoo;
+			packageProductDependencies = (
+				CC8563F1DE17C52FEAE90000 /* SuperwallKit */,
+			);
+			productName = Peakdoo;
+			productReference = AB16FF92739EB2F00A45458D /* Peakdoo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0F65BE48F5AF57FBC273309 /* BatteryWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92DE78AEDEA5DAE730B8318B /* Build configuration list for PBXNativeTarget "BatteryWidget" */;
+			buildPhases = (
+				E4F1369631365E5B94F61791 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BatteryWidget;
+			packageProductDependencies = (
+			);
+			productName = BatteryWidget;
+			productReference = 6607069F44F7E3EFFA1E70B6 /* BatteryWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D3CA487D2F7B2653002440BA /* Project object */ = {
+		8279A87E2C317C4996AD226A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2620;
+				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					D3CA48842F7B2653002440BA = {
-						CreatedOnToolsVersion = 26.2;
+					75B1B4C891C5AFB55AA5CD25 = {
+						DevelopmentTeam = 4GTYZ7V7Y8;
+						ProvisioningStyle = Automatic;
 					};
-					D3CA48912F7B2654002440BA = {
-						CreatedOnToolsVersion = 26.2;
-						TestTargetID = D3CA48842F7B2653002440BA;
+					76EBA670A55554DDDF56CA47 = {
+						DevelopmentTeam = 4GTYZ7V7Y8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A784A284ADD24431B908B6E8;
 					};
-					D3CA489B2F7B2654002440BA = {
-						CreatedOnToolsVersion = 26.2;
-						TestTargetID = D3CA48842F7B2653002440BA;
+					A784A284ADD24431B908B6E8 = {
+						DevelopmentTeam = HQ58J8P5M8;
+						ProvisioningStyle = Automatic;
+					};
+					B0F65BE48F5AF57FBC273309 = {
+						DevelopmentTeam = HQ58J8P5M8;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = D3CA48802F7B2653002440BA /* Build configuration list for PBXProject "Peakdoo" */;
+			buildConfigurationList = A8A13CDA38CE4B8F59B53435 /* Build configuration list for PBXProject "Peakdoo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = D3CA487C2F7B2653002440BA;
+			mainGroup = 7462FCECE561E91093C34E13;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				D3CA49012F7B2653002440BA /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
+				CAA1E101C2086C3C1E5DDAEC /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = D3CA48862F7B2653002440BA /* Products */;
+			productRefGroup = 1D6CE9D184A7AB4074B7875C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D3CA48842F7B2653002440BA /* Peakdoo */,
-				D3CA48912F7B2654002440BA /* PeakdooTests */,
-				D3CA489B2F7B2654002440BA /* PeakdooUITests */,
+				B0F65BE48F5AF57FBC273309 /* BatteryWidget */,
+				A784A284ADD24431B908B6E8 /* Peakdoo */,
+				75B1B4C891C5AFB55AA5CD25 /* PeakdooTests */,
+				76EBA670A55554DDDF56CA47 /* PeakdooUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D3CA48832F7B2653002440BA /* Resources */ = {
+		15CA8423146F3CDF0EB2962C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3CA48902F7B2654002440BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3CA489A2F7B2654002440BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				5D6AE8CEE4DBA5076A992893 /* AddWidgetTutorial.mp4 in Resources */,
+				BB3377DA649778FD7A81BC0D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D3CA48812F7B2653002440BA /* Sources */ = {
+		89C9B9424BD63B44C5AC1954 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D1BB205CCC9B0069E5CEC72 /* PeakdooTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3CA488E2F7B2654002440BA /* Sources */ = {
+		A37F8670E493198732170610 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E0482B248E33F6E58AFCD7 /* AddWidgetTutorialSheet.swift in Sources */,
+				1FEEF6A351B732A32B3D43E3 /* AppSettings.swift in Sources */,
+				4BF5E869939DA9D60C54FD2C /* BLEDataParser.swift in Sources */,
+				09B689197819CEE7A3BABC53 /* BLEDeviceConnection.swift in Sources */,
+				CA7FDE7873CD6260B3506268 /* BLEManager.swift in Sources */,
+				E5DF50D53B4A3C7241C5D392 /* BLEProtocol.swift in Sources */,
+				F1313B350B639F9C988D0650 /* BackgroundRefreshScheduler.swift in Sources */,
+				A69A668882DC5DAC00DB0DF3 /* BatteryActivityAttributes.swift in Sources */,
+				2FF91B45E6DBE03C6397B7AF /* BatteryDetailCard.swift in Sources */,
+				4D8076C440A44C1D7443EA29 /* BatteryGaugeView.swift in Sources */,
+				61D469077DDCF764DFC21063 /* BatteryInfo.swift in Sources */,
+				BE0BBF36E0E3F5D027990688 /* BatteryLiveActivityManager.swift in Sources */,
+				B36D75C147750545BE0C7395 /* BatteryWidgetBridge.swift in Sources */,
+				0650DBCD3A3792DFDB275F13 /* BatteryWidgetSharedStore.swift in Sources */,
+				9A0958A4786B3F8BF15D2E00 /* CardContainerView.swift in Sources */,
+				D852F75EDF291E63CD8FA6B9 /* Color+Peakdoo.swift in Sources */,
+				5F168F3CBA6ED2E1AA07D5CD /* ConnectionView.swift in Sources */,
+				0CE99BA8AB4C4EFBC8B1C23C /* ConnectionViewModel.swift in Sources */,
+				D3C9D9DF6A2E20E74F64F07A /* ContentView.swift in Sources */,
+				2DC1299E4BE4613AB2132919 /* DCPortCard.swift in Sources */,
+				00C014D852CB8AAD2942C409 /* DCPortStatus.swift in Sources */,
+				7AD46E33463970EBA7F5A519 /* DashboardView.swift in Sources */,
+				92E8373F969B88578B75E6C6 /* DashboardViewModel.swift in Sources */,
+				D6363AC08C51603762DA060E /* Data+LittleEndian.swift in Sources */,
+				30AB1F3DECE5C97CBC97617C /* DateTimeSyncCard.swift in Sources */,
+				F8DA5D8F1FBD93C34A1E5C31 /* DemoDeviceSimulator.swift in Sources */,
+				67E5CD79329EC096C8A6D1FD /* DemoModeButton.swift in Sources */,
+				D7DB3CC1F45D458FB5E63208 /* DeviceModel.swift in Sources */,
+				941C002F5A7C794D2592CA1B /* DeviceRowView.swift in Sources */,
+				757DE589C51FB7B78500EFE0 /* DeviceState.swift in Sources */,
+				E2EE34E19C7521AC1D68FCB1 /* OTAModels.swift in Sources */,
+				8939C6527DEE23412F294519 /* PaywallManager.swift in Sources */,
+				BCB2FA306C4BD2A2D4E41E93 /* PeakdooApp.swift in Sources */,
+				C6C1DAD8D4AFFD4574C079FD /* PeakdooTheme.swift in Sources */,
+				89DC1646C7F61274250747E2 /* PowerLimitSection.swift in Sources */,
+				83016EAB486045652630BC61 /* PowerReadingView.swift in Sources */,
+				E3F87C8F3C1D8584A9288A94 /* PulsingDotView.swift in Sources */,
+				CBB857554436A999E64329BD /* SettingsSheet.swift in Sources */,
+				5E12D122C4D2B211E6E2F000 /* StatusBadgeView.swift in Sources */,
+				15F2AFBE51471AA17019A9EB /* SystemInfoCard.swift in Sources */,
+				59D066E3871EC14C8EC6759A /* TimerEditorSheet.swift in Sources */,
+				D113926ADA4C8D7048511DE7 /* TimerListCard.swift in Sources */,
+				1770B29043F9EDE394CD6AF2 /* TimerModel.swift in Sources */,
+				99FA115106C08B42AD117215 /* TypeCPortCard.swift in Sources */,
+				295DE0E3E28C250587136ADF /* TypeCPortStatus.swift in Sources */,
+				66A66651B7321271B9046840 /* View+CardStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3CA48982F7B2654002440BA /* Sources */ = {
+		E4F1369631365E5B94F61791 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFF656957E452807765BA46 /* BatteryActivityAttributes.swift in Sources */,
+				2A88E85BA7EA7E5FCC7E661E /* BatteryLiveActivity.swift in Sources */,
+				971098486DC5081AF3A0834E /* BatteryProvider.swift in Sources */,
+				F760FA7B5920CBD0F0BA4D8A /* BatteryWidget.swift in Sources */,
+				C5E1F4AFD2820D3D51747129 /* BatteryWidgetBundle.swift in Sources */,
+				656177211A7AF6D724EFF912 /* BatteryWidgetSharedStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8440B8C683F46C4CB54CA9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20342A657A1FDC0DF8E3E5D7 /* PeakdooUITests.swift in Sources */,
+				27FF545F1110E7DB25E9C012 /* PeakdooUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D3CA48942F7B2654002440BA /* PBXTargetDependency */ = {
+		10621C8B147396EEA8A245FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D3CA48842F7B2653002440BA /* Peakdoo */;
-			targetProxy = D3CA48932F7B2654002440BA /* PBXContainerItemProxy */;
+			target = B0F65BE48F5AF57FBC273309 /* BatteryWidget */;
+			targetProxy = 1B98AD143CC6EAAA83F74226 /* PBXContainerItemProxy */;
 		};
-		D3CA489E2F7B2654002440BA /* PBXTargetDependency */ = {
+		3882D55B3824E1228EE0C883 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D3CA48842F7B2653002440BA /* Peakdoo */;
-			targetProxy = D3CA489D2F7B2654002440BA /* PBXContainerItemProxy */;
+			target = A784A284ADD24431B908B6E8 /* Peakdoo */;
+			targetProxy = EF342D73D5C13F4A87FE9D31 /* PBXContainerItemProxy */;
+		};
+		3A52EF99CA61433EB07251DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A784A284ADD24431B908B6E8 /* Peakdoo */;
+			targetProxy = EF4AC0E74E9FA0F5C8F933B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		D3CA48A42F7B2654002440BA /* Debug */ = {
+		250B38358A9EC43482AEB927 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 4GTYZ7V7Y8;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peakdoo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Peakdoo";
+			};
+			name = Release;
+		};
+		59548C2E28F49A8AF6652E25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peakdoo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Peakdoo";
 			};
 			name = Debug;
 		};
-		D3CA48A52F7B2654002440BA /* Release */ = {
+		61910FDBB934872D319A0909 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Peakdoo;
+			};
+			name = Release;
+		};
+		7F7974AF2D47BED8EB1C22DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Peakdoo/Peakdoo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = HQ58J8P5M8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Peakdoo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.Peakdoo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8E21262E5A396A32D74326EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -350,6 +753,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -393,28 +797,147 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		D3CA48A72F7B2654002440BA /* Debug */ = {
+		AF7A1BE2036FAB657DD85865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Peakdoo;
+			};
+			name = Debug;
+		};
+		C0964C7F75945AE621384575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4GTYZ7V7Y8;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D3C8FECD2E43B39335CBDFC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = HQ58J8P5M8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BatteryWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Battery;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.Peakdoo.BatteryWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D8E5A7E337C92FCE3296E63A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Peakdoo/Peakdoo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = HQ58J8P5M8;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "PeakDo connects to your Link-Power battery via Bluetooth to display status and control power outputs.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIBackgroundModes = "bluetooth-central";
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = Peakdoo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,192 +945,112 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.Peakdoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		D3CA48A82F7B2654002440BA /* Release */ = {
+		F41868B358481486999473A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BatteryWidget/BatteryWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = HQ58J8P5M8;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "PeakDo connects to your Link-Power battery via Bluetooth to display status and control power outputs.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIBackgroundModes = "bluetooth-central";
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = BatteryWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Battery;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.Peakdoo;
+				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.Peakdoo.BatteryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		D3CA48AA2F7B2654002440BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4GTYZ7V7Y8;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peakdoo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Peakdoo";
 			};
 			name = Debug;
-		};
-		D3CA48AB2F7B2654002440BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4GTYZ7V7Y8;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Peakdoo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Peakdoo";
-			};
-			name = Release;
-		};
-		D3CA48AD2F7B2654002440BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4GTYZ7V7Y8;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = Peakdoo;
-			};
-			name = Debug;
-		};
-		D3CA48AE2F7B2654002440BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4GTYZ7V7Y8;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = co.briananglin.PeakdooUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = Peakdoo;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D3CA48802F7B2653002440BA /* Build configuration list for PBXProject "Peakdoo" */ = {
+		3E27DC5085044ABE494A35A0 /* Build configuration list for PBXNativeTarget "PeakdooTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3CA48A42F7B2654002440BA /* Debug */,
-				D3CA48A52F7B2654002440BA /* Release */,
+				59548C2E28F49A8AF6652E25 /* Debug */,
+				250B38358A9EC43482AEB927 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		D3CA48A62F7B2654002440BA /* Build configuration list for PBXNativeTarget "Peakdoo" */ = {
+		92DE78AEDEA5DAE730B8318B /* Build configuration list for PBXNativeTarget "BatteryWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3CA48A72F7B2654002440BA /* Debug */,
-				D3CA48A82F7B2654002440BA /* Release */,
+				F41868B358481486999473A3 /* Debug */,
+				D3C8FECD2E43B39335CBDFC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		D3CA48A92F7B2654002440BA /* Build configuration list for PBXNativeTarget "PeakdooTests" */ = {
+		9703C6E5D537FBF670751C7E /* Build configuration list for PBXNativeTarget "PeakdooUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3CA48AA2F7B2654002440BA /* Debug */,
-				D3CA48AB2F7B2654002440BA /* Release */,
+				AF7A1BE2036FAB657DD85865 /* Debug */,
+				61910FDBB934872D319A0909 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		D3CA48AC2F7B2654002440BA /* Build configuration list for PBXNativeTarget "PeakdooUITests" */ = {
+		A8A13CDA38CE4B8F59B53435 /* Build configuration list for PBXProject "Peakdoo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3CA48AD2F7B2654002440BA /* Debug */,
-				D3CA48AE2F7B2654002440BA /* Release */,
+				C0964C7F75945AE621384575 /* Debug */,
+				8E21262E5A396A32D74326EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		FBF2B9A93310F8212BD3B193 /* Build configuration list for PBXNativeTarget "Peakdoo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E5A7E337C92FCE3296E63A /* Debug */,
+				7F7974AF2D47BED8EB1C22DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D3CA49012F7B2653002440BA /* XCRemoteSwiftPackageReference "Superwall-iOS" */ = {
+		CAA1E101C2086C3C1E5DDAEC /* XCRemoteSwiftPackageReference "Superwall-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/superwall/Superwall-iOS";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = 4.14.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D3CA49022F7B2653002440BA /* SuperwallKit */ = {
+		CC8563F1DE17C52FEAE90000 /* SuperwallKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D3CA49012F7B2653002440BA /* XCRemoteSwiftPackageReference "Superwall-iOS" */;
+			package = CAA1E101C2086C3C1E5DDAEC /* XCRemoteSwiftPackageReference "Superwall-iOS" */;
 			productName = SuperwallKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = D3CA487D2F7B2653002440BA /* Project object */;
+	rootObject = 8279A87E2C317C4996AD226A /* Project object */;
 }
