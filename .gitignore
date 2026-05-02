@@ -34,3 +34,7 @@ Pods/
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+# Kanna working files (frame extracts, uploads, intermediates)
+.kanna/
+
