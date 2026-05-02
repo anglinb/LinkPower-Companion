@@ -8,9 +8,25 @@ struct DashboardView: View {
     @State private var showSettingsMenu = false
     @State private var showSettingsSheet = false
 
-    /// True once the BLE setup sequence finishes and first data has arrived.
+    /// True once we have the minimum data required to render the dashboard.
+    ///
+    /// We intentionally do *not* wait on `deviceState.isConnected`: that flag
+    /// only flips at the very end of the BLE setup sequence (after datetime
+    /// sync, feature query and timer loading), which can run for a couple of
+    /// seconds after the first battery reading has already arrived. Keying off
+    /// the real data instead means the loading spinner stays visible until we
+    /// actually have a percentage to show — no flash of "--" or "0%" first.
     private var isReady: Bool {
-        viewModel.deviceState.isConnected
+        let state = viewModel.deviceState
+        // Need the model before we can decide what capabilities to render.
+        guard state.model != .unknown else { return false }
+        // For devices with a battery, wait for the first reading.
+        if state.supportsBatteryCapacity {
+            return state.battery != nil
+        }
+        // Otherwise wait for at least the DC port reading so the dashboard
+        // isn't rendered empty.
+        return state.dcPort != nil
     }
 
     private var appSettings: AppSettings {

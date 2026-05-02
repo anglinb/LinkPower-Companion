@@ -53,9 +53,9 @@ struct BatteryGaugeView: View {
         }
         .frame(width: 200, height: 200)
         .onAppear {
-            withAnimation(.spring(duration: 1.0, bounce: 0.15)) {
-                animatedLevel = targetLevel
-            }
+            // Start the arc at the real value — the view is only mounted once
+            // we have a real reading, so we shouldn't animate up from 0.
+            animatedLevel = targetLevel
         }
         .onChange(of: targetLevel) { _, newValue in
             withAnimation(.spring(duration: 0.6)) {
