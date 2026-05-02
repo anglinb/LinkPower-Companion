@@ -49,11 +49,26 @@ final class BLEManager: NSObject {
 
     private static let lastPeripheralUUIDKey = "BLEManager.lastPeripheralUUID"
 
+    /// Identifier used by iOS to restore this central manager when the
+    /// app is relaunched in the background to deliver a BLE event after
+    /// being terminated by the system. Must remain stable across
+    /// versions — changing it disables restoration for existing users.
+    private static let centralRestoreIdentifier = "co.briananglin.Peakdoo.central"
+
     // MARK: - Init
 
     override init() {
         super.init()
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+        centralManager = CBCentralManager(
+            delegate: self,
+            queue: nil,
+            options: [
+                CBCentralManagerOptionRestoreIdentifierKey: Self.centralRestoreIdentifier,
+                // We surface our own UI when Bluetooth is off; suppress the
+                // system alert so the app handles it gracefully.
+                CBCentralManagerOptionShowPowerAlertKey: false,
+            ]
+        )
     }
 
     // MARK: - Public API
@@ -161,10 +176,67 @@ extension BLEManager: CBCentralManagerDelegate {
         Task { @MainActor [weak self] in
             guard let self else { return }
             if state == .poweredOn {
-                self.attemptAutoReconnect()
+                // If state restoration already produced a connection, skip
+                // the auto-reconnect path (which would issue a fresh
+                // connect on a peripheral that's already connected).
+                if self.deviceConnection == nil {
+                    self.attemptAutoReconnect()
+                } else {
+                    logger.info("Skipping auto-reconnect: state restoration produced an active connection")
+                }
             } else {
                 self.isScanning = false
             }
+        }
+    }
+
+    /// Called by iOS when the system relaunches the app to deliver a
+    /// BLE event after termination. iOS hands us back the peripherals
+    /// it was tracking on our behalf.
+    ///
+    /// IMPORTANT: even when iOS reports `peripheral.state == .connected`,
+    /// the *encrypted/bonded* GATT link is not always re-established
+    /// after restoration. Writing to a characteristic that requires
+    /// encryption in that window fails with "Authentication is
+    /// insufficient" (ATT error 0x05) and the device drops the link.
+    ///
+    /// To keep things reliable we **always tear down the restored link**
+    /// and let the normal auto-reconnect path bring up a fresh,
+    /// properly-encrypted connection. iOS reuses the cached bonding
+    /// info from its keychain, so the reconnect is silent (no pairing
+    /// prompt) and only adds ~1–2s of latency.
+    nonisolated func centralManager(
+        _ central: CBCentralManager,
+        willRestoreState dict: [String: Any]
+    ) {
+        let peripherals = (dict[CBCentralManagerRestoredStatePeripheralsKey] as? [CBPeripheral]) ?? []
+        logger.info("State restoration: \(peripherals.count) peripheral(s)")
+
+        guard let peripheral = peripherals.first else { return }
+        let peripheralId = peripheral.identifier
+        let stateAtRestore = peripheral.state
+
+        // Drop any stale OS-level link synchronously on the delegate
+        // queue so it's torn down before centralManagerDidUpdateState
+        // fires its auto-reconnect.
+        if stateAtRestore == .connected || stateAtRestore == .connecting {
+            central.cancelPeripheralConnection(peripheral)
+        }
+
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            logger.info("State restoration: peripheral=\(peripheralId) restoredState=\(stateAtRestore.rawValue) — deferring to auto-reconnect for clean encryption")
+
+            // Persist the UUID so attemptAutoReconnect can find this
+            // peripheral again. (Already saved on the original connect,
+            // but we re-save defensively in case state restoration ran
+            // before any connect ever completed in this install.)
+            self.saveLastPeripheral(peripheralId)
+
+            // Leave deviceConnection == nil. centralManagerDidUpdateState
+            // will fire next with .poweredOn and hand off to
+            // attemptAutoReconnect, which uses the saved UUID to bring
+            // up a fresh encrypted connection.
         }
     }
 

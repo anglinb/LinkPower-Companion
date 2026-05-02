@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var bleManager = BLEManager()
     @State private var demoSimulator: DemoDeviceSimulator?
     @State private var demoViewModel: DashboardViewModel?
     let appSettings: AppSettings
+    let bleManager: BLEManager
 
     private var isConnected: Bool {
         bleManager.deviceConnection != nil
@@ -41,13 +41,28 @@ struct ContentView: View {
 
         let vm = simulator.makeDashboardViewModel(appSettings: appSettings)
         vm.onDisconnect = { [weak simulator] in
-            simulator?.stop()
-            demoSimulator = nil
-            demoViewModel = nil
-            appSettings.isDemoMode = false
+            // Match the activation path: snap out of demo instantly, no
+            // 0.5s spring crossfade back to the connection screen.
+            var exitTx = Transaction()
+            exitTx.disablesAnimations = true
+            withTransaction(exitTx) {
+                simulator?.stop()
+                demoSimulator = nil
+                demoViewModel = nil
+                appSettings.isDemoMode = false
+            }
         }
-        demoViewModel = vm
-        appSettings.isDemoMode = true
+
+        // Demo has no BLE handshake or data loading — the simulator is
+        // already populated synchronously above — so skip the transition
+        // animations that normally cover real-device connection latency.
+        // This makes "Try Demo Mode" render the dashboard instantly.
+        var tx = Transaction()
+        tx.disablesAnimations = true
+        withTransaction(tx) {
+            demoViewModel = vm
+            appSettings.isDemoMode = true
+        }
     }
 
     // MARK: - Real Device ViewModel
@@ -111,5 +126,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(appSettings: AppSettings())
+    ContentView(appSettings: AppSettings(), bleManager: BLEManager())
 }
