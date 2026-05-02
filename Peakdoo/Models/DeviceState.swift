@@ -13,7 +13,16 @@ final class DeviceState {
     var features: FeatureFlags = []
     var otaInfo: OTAInfo?
 
-    var battery: BatteryInfo?
+    var battery: BatteryInfo? {
+        didSet {
+            guard battery != oldValue else { return }
+            BatteryWidgetBridge.publish(
+                battery: battery,
+                isConnected: isConnected,
+                deviceName: model.displayName
+            )
+        }
+    }
     var dcPort: DCPortStatus?
     var typeCPort: TypeCPortStatus?
 
@@ -81,5 +90,6 @@ final class DeviceState {
         typeCPort = nil
         timers = nil
         lastSyncTime = nil
+        BatteryWidgetBridge.publishDisconnected()
     }
 }
