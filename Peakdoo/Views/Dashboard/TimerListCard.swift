@@ -18,7 +18,9 @@ struct TimerListCard: View {
                 // Add button
                 if viewModel.canAddTimer {
                     Button {
-                        viewModel.beginAddTimer()
+                        PaywallManager.gate(placement: PaywallManager.timerPlacement) {
+                            viewModel.beginAddTimer()
+                        }
                     } label: {
                         Image(systemName: "plus")
                             .font(.subheadline.weight(.medium))
@@ -129,7 +131,9 @@ struct TimerListCard: View {
 
             // Edit button
             Button {
-                viewModel.beginEditTimer(timer)
+                PaywallManager.gate(placement: PaywallManager.timerPlacement) {
+                    viewModel.beginEditTimer(timer)
+                }
             } label: {
                 Image(systemName: "pencil.circle")
                     .font(.title3)

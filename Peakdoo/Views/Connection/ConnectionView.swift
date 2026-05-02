@@ -109,7 +109,9 @@ struct ConnectionView: View {
                 }
 
                 DeviceRowView(device: device) {
-                    viewModel.connect(to: device)
+                    PaywallManager.gate(placement: PaywallManager.deviceConnectionPlacement) {
+                        viewModel.connect(to: device)
+                    }
                 }
             }
         }
@@ -130,7 +132,9 @@ struct ConnectionView: View {
                 if viewModel.isScanning {
                     viewModel.stopScan()
                 } else {
-                    viewModel.startScan()
+                    PaywallManager.gate(placement: PaywallManager.deviceSearchPlacement) {
+                        viewModel.startScan()
+                    }
                 }
             } label: {
                 HStack(spacing: 8) {
@@ -151,7 +155,9 @@ struct ConnectionView: View {
             // Reconnect button
             if viewModel.hasLastConnectedDevice && !viewModel.isScanning {
                 Button {
-                    viewModel.attemptReconnect()
+                    PaywallManager.gate(placement: PaywallManager.deviceReconnectPlacement) {
+                        viewModel.attemptReconnect()
+                    }
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "arrow.triangle.2.circlepath")

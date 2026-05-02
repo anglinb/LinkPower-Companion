@@ -110,7 +110,9 @@ struct PowerLimitSection: View {
                 }
 
                 Button {
-                    Task { await onGet() }
+                    PaywallManager.gate(placement: PaywallManager.powerLimitPlacement) {
+                        Task { await onGet() }
+                    }
                 } label: {
                     Text("Get")
                         .font(.caption2.weight(.medium))
@@ -140,7 +142,9 @@ struct PowerLimitSection: View {
 
                     Button {
                         if let onSet {
-                            Task { await onSet() }
+                            PaywallManager.gate(placement: PaywallManager.powerLimitPlacement) {
+                                Task { await onSet() }
+                            }
                         }
                     } label: {
                         Text("Set")
