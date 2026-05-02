@@ -7,6 +7,7 @@ struct DashboardView: View {
     @State private var appeared = false
     @State private var showSettingsMenu = false
     @State private var showSettingsSheet = false
+    @State private var showAddWidgetTutorial = false
 
     /// True once we have the minimum data required to render the dashboard.
     ///
@@ -49,6 +50,16 @@ struct DashboardView: View {
         .navigationTitle(viewModel.modelName)
         .navigationBarTitleDisplayMode(.large)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    showAddWidgetTutorial = true
+                } label: {
+                    Label("Add Widget", systemImage: "plus.square.on.square")
+                        .labelStyle(.titleAndIcon)
+                        .font(.subheadline.weight(.medium))
+                }
+            }
+
             ToolbarItem(placement: .topBarTrailing) {
                 HStack(spacing: 4) {
                     // Settings menu
@@ -111,6 +122,9 @@ struct DashboardView: View {
         }
         .sheet(isPresented: $showSettingsSheet) {
             SettingsSheet()
+        }
+        .sheet(isPresented: $showAddWidgetTutorial) {
+            AddWidgetTutorialSheet()
         }
         .onAppear {
             if isReady && !appeared {
