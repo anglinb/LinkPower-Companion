@@ -1,0 +1,191 @@
+name: Peakdoo
+options:
+  bundleIdPrefix: co.briananglin
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+  xcodeVersion: "26.2"
+  minimumXcodeGenVersion: "2.45.0"
+
+packages:
+  SuperwallKit:
+    url: https://github.com/superwall/Superwall-iOS
+    from: 4.14.2
+
+configs:
+  Debug: debug
+  Release: release
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    ALWAYS_SEARCH_USER_PATHS: NO
+    ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+    CLANG_CXX_LANGUAGE_STANDARD: "gnu++20"
+    DEVELOPMENT_TEAM: 4GTYZ7V7Y8
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    GCC_C_LANGUAGE_STANDARD: gnu17
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+  configs:
+    Debug:
+      ENABLE_TESTABILITY: YES
+      ONLY_ACTIVE_ARCH: YES
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+    Release:
+      SWIFT_COMPILATION_MODE: wholemodule
+      VALIDATE_PRODUCT: YES
+
+targets:
+  Peakdoo:
+    type: application
+    platform: iOS
+    sources:
+      - Peakdoo
+    settings:
+      base:
+        DEVELOPMENT_TEAM: HQ58J8P5M8
+        PRODUCT_BUNDLE_IDENTIFIER: co.briananglin.Peakdoo
+        PRODUCT_NAME: "$(TARGET_NAME)"
+        CODE_SIGN_ENTITLEMENTS: Peakdoo/Peakdoo.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        CURRENT_PROJECT_VERSION: 7
+        MARKETING_VERSION: "1.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_PREVIEWS: YES
+        STRING_CATALOG_GENERATE_SYMBOLS: YES
+        SWIFT_APPROACHABLE_CONCURRENCY: YES
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+        SWIFT_EMIT_LOC_STRINGS: YES
+        SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY: YES
+        LD_RUNPATH_SEARCH_PATHS:
+          - "$(inherited)"
+          - "@executable_path/Frameworks"
+    info:
+      path: Peakdoo/Info.plist
+      properties:
+        CFBundleDisplayName: LinkPower
+        ITSAppUsesNonExemptEncryption: false
+        NSBluetoothAlwaysUsageDescription: "LinkPower connects to your Link-Power battery via Bluetooth to display status and control power outputs."
+        NSSupportsLiveActivities: true
+        NSSupportsLiveActivitiesFrequentUpdates: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIApplicationSupportsIndirectInputEvents: true
+        UIBackgroundModes:
+          - audio
+          - bluetooth-central
+          - fetch
+          - processing
+        UILaunchScreen:
+          UIColorName: ""
+          UIImageName: ""
+        UISupportedInterfaceOrientations~iphone:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        BGTaskSchedulerPermittedIdentifiers:
+          - co.briananglin.Peakdoo.refresh
+    dependencies:
+      - package: SuperwallKit
+        product: SuperwallKit
+      - target: BatteryWidget
+
+  BatteryWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: BatteryWidget
+        excludes:
+          - "Info.plist"
+          - "BatteryWidget.entitlements"
+      - Peakdoo/Shared
+    settings:
+      base:
+        DEVELOPMENT_TEAM: HQ58J8P5M8
+        PRODUCT_BUNDLE_IDENTIFIER: co.briananglin.Peakdoo.BatteryWidget
+        PRODUCT_NAME: "$(TARGET_NAME)"
+        INFOPLIST_FILE: BatteryWidget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: BatteryWidget/BatteryWidget.entitlements
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        CURRENT_PROJECT_VERSION: 7
+        MARKETING_VERSION: "1.0"
+        SKIP_INSTALL: YES
+        ENABLE_PREVIEWS: YES
+        SWIFT_APPROACHABLE_CONCURRENCY: YES
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+        SWIFT_EMIT_LOC_STRINGS: YES
+        SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "Battery"
+        LD_RUNPATH_SEARCH_PATHS:
+          - "$(inherited)"
+          - "@executable_path/Frameworks"
+          - "@executable_path/../../Frameworks"
+
+  PeakdooTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - PeakdooTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: co.briananglin.PeakdooTests
+        PRODUCT_NAME: "$(TARGET_NAME)"
+        GENERATE_INFOPLIST_FILE: YES
+        CURRENT_PROJECT_VERSION: 2
+        MARKETING_VERSION: "1.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        STRING_CATALOG_GENERATE_SYMBOLS: NO
+        SWIFT_APPROACHABLE_CONCURRENCY: YES
+        SWIFT_EMIT_LOC_STRINGS: NO
+        SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY: YES
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Peakdoo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Peakdoo"
+    dependencies:
+      - target: Peakdoo
+
+  PeakdooUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - PeakdooUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: co.briananglin.PeakdooUITests
+        PRODUCT_NAME: "$(TARGET_NAME)"
+        GENERATE_INFOPLIST_FILE: YES
+        CURRENT_PROJECT_VERSION: 2
+        MARKETING_VERSION: "1.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        STRING_CATALOG_GENERATE_SYMBOLS: NO
+        SWIFT_APPROACHABLE_CONCURRENCY: YES
+        SWIFT_EMIT_LOC_STRINGS: NO
+        SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY: YES
+        TEST_TARGET_NAME: Peakdoo
+    dependencies:
+      - target: Peakdoo
+
+schemes:
+  Peakdoo:
+    build:
+      targets:
+        Peakdoo: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - PeakdooTests
+        - PeakdooUITests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
