@@ -6,6 +6,7 @@ struct DashboardView: View {
     var isDemoMode: Bool = false
     @State private var appeared = false
     @State private var showSettingsMenu = false
+    @State private var showSettingsSheet = false
 
     /// True once the BLE setup sequence finishes and first data has arrived.
     private var isReady: Bool {
@@ -58,6 +59,14 @@ struct DashboardView: View {
                                 Label("Dev Mode", systemImage: "hammer")
                             }
                         }
+
+                        Divider()
+
+                        Button {
+                            showSettingsSheet = true
+                        } label: {
+                            Label("Settings & Restore Purchases", systemImage: "gearshape.fill")
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle.fill")
                             .symbolRenderingMode(.hierarchical)
@@ -83,6 +92,9 @@ struct DashboardView: View {
             ) { timer in
                 viewModel.saveTimer(timer)
             }
+        }
+        .sheet(isPresented: $showSettingsSheet) {
+            SettingsSheet()
         }
         .onAppear {
             if isReady && !appeared {

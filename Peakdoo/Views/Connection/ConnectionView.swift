@@ -4,6 +4,7 @@ struct ConnectionView: View {
     @Bindable var viewModel: ConnectionViewModel
     var onActivateDemo: (() -> Void)?
     @State private var appeared = false
+    @State private var showSettings = false
 
     var body: some View {
         ScrollView {
@@ -44,6 +45,22 @@ struct ConnectionView: View {
             .padding(.horizontal, PeakdooTheme.horizontalPadding)
         }
         .background(PeakdooTheme.screenBackground)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    showSettings = true
+                } label: {
+                    Image(systemName: "gearshape.fill")
+                        .symbolRenderingMode(.hierarchical)
+                        .font(.title3)
+                }
+                .foregroundStyle(.secondary)
+                .accessibilityLabel("Settings")
+            }
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsSheet()
+        }
         .onAppear {
             withAnimation(.spring(duration: 0.8, bounce: 0.2)) {
                 appeared = true
@@ -59,7 +76,7 @@ struct ConnectionView: View {
     @ViewBuilder
     private var heroSection: some View {
         VStack(spacing: 6) {
-            Text("PeakDo LinkPower Companion")
+            Text("LinkPower")
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
 
@@ -206,7 +223,7 @@ struct ConnectionView: View {
     @ViewBuilder
     private var footerSection: some View {
         VStack(spacing: 4) {
-            Text("PeakDo")
+            Text("LinkPower")
                 .font(.caption.weight(.medium))
                 .foregroundStyle(.quaternary)
 
