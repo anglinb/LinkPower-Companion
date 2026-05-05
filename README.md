@@ -1,8 +1,18 @@
-# PeakDo - Link-Power Companion App
+# LinkPower Companion
 
-A native iOS companion app for [PeakDo](https://peakdo.ca) Link-Power portable battery devices. Built with SwiftUI and CoreBluetooth.
+[Website](https://linkpower.app) · [App Store](https://apps.apple.com/us/app/linkpower-companion/id6762404390) · [Privacy](https://linkpower.app/privacy) · [Terms](https://linkpower.app/terms)
+
+The [LinkPower app](https://linkpower.app) is a native iOS companion for the PeakDo Link-Power family of portable power stations (LP1, LP2, LP+). Built with SwiftUI and CoreBluetooth, the LinkPower app gives you live battery telemetry, DC port control, USB-C power-limit configuration, and on-device scheduling — all over Bluetooth, with zero third-party dependencies.
+
+[<img src="marketing/public/mockup.png" alt="LinkPower app on iPhone" width="640">](https://linkpower.app)
 
 > **This is an unofficial, community-built application. It is not affiliated with, endorsed by, or supported by PeakDo Tech. Inc. Use at your own risk.**
+
+## Install
+
+Get the LinkPower app from the App Store: <https://apps.apple.com/us/app/linkpower-companion/id6762404390>
+
+Learn more at <https://linkpower.app>.
 
 ## Screenshots
 
@@ -100,6 +110,14 @@ Clean Minimal Light design inspired by Apple Health and Home apps:
 **THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.** This is an unofficial application and is not affiliated with, endorsed by, or supported by PeakDo Tech. Inc. The authors and contributors take no responsibility for any damage, data loss, or device malfunction that may result from using this application. Use entirely at your own risk.
 
 Interacting with device firmware (especially advanced features like scheduled timers, power limits, and device restart/shutdown) carries inherent risk. Always ensure your device has adequate power before performing any operations.
+
+## Links
+
+- Website: <https://linkpower.app>
+- App Store: <https://apps.apple.com/us/app/linkpower-companion/id6762404390>
+- Privacy Policy: <https://linkpower.app/privacy>
+- Terms of Service: <https://linkpower.app/terms>
+- Source: <https://github.com/anglinb/LinkPower-Companion>
 
 ## License
 
