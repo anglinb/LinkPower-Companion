@@ -17,6 +17,10 @@ Learn more at <https://linkpower.app>.
 ## Screenshots
 
 <p align="center">
+  <img src="screenshots/live-charging.png" width="300" alt="Live Charging View" />
+  <img src="screenshots/live-discharging.png" width="300" alt="Live Discharging View" />
+</p>
+<p align="center">
   <img src="screenshots/connection-screen.png" width="200" alt="Connection Screen" />
   <img src="screenshots/battery-dashboard.png" width="200" alt="Battery Dashboard" />
   <img src="screenshots/dc-port-controls.png" width="200" alt="DC Port Controls" />
@@ -29,6 +33,7 @@ Learn more at <https://linkpower.app>.
 
 | Screen | Description |
 |--------|-------------|
+| **Live Charging / Discharging** | Real-time power flow view showing input/output state, wattage, and battery status |
 | **Connection** | BLE scanning with demo mode option |
 | **Battery Dashboard** | Live battery level, capacity, voltage, current, and remaining time |
 | **DC Port Controls** | Toggle DC output, monitor power/voltage/current, bypass mode |
