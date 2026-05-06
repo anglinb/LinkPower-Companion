@@ -38,3 +38,5 @@ Pods/
 # Kanna working files (frame extracts, uploads, intermediates)
 .kanna/
 
+# Closed-source iOS app code (lives in private repo: LinkPower-Companion-Private)
+app/
