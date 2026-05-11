@@ -1,0 +1,13 @@
+# Cloudflare Pages redirect rules.
+#
+# Consolidate www → apex so Google sees a single canonical host. Without
+# this, the SEO crawl reports apex and www as duplicates and link equity
+# splits across both subdomains.
+#
+# Syntax: https://www.linkpower.app/<path> 301-redirects to
+# https://linkpower.app/<path>. The `:splat` placeholder forwards the
+# matched segment so deep-links keep working.
+
+https://www.linkpower.app/* https://linkpower.app/:splat 301
+http://www.linkpower.app/*  https://linkpower.app/:splat 301
+http://linkpower.app/*      https://linkpower.app/:splat 301

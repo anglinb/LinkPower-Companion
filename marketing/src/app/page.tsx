@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { posts } from "../data/posts";
 
 /* =========================================================================
    Link-Power Companion — Marketing landing page
@@ -197,15 +198,17 @@ function Nav() {
           >
             <img src="/app-icon-fg.png" alt="" width={32} height={32} style={{ display: "block" }} />
           </span>
-          <span style={{ fontWeight: 800, color: THEME.ink, fontSize: 16, letterSpacing: "-0.01em" }}>
+          <span className="lp-brand-text" style={{ fontWeight: 800, color: THEME.ink, fontSize: 16, letterSpacing: "-0.01em" }}>
             Link-Power Companion
           </span>
         </a>
-        <nav style={{ display: "flex", alignItems: "center", gap: 28, fontSize: 14, fontWeight: 500 }}>
-          <a href="#features" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Features</a>
-          <a href="#devices" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Devices</a>
-          <a href="#faq" style={{ color: THEME.inkSoft, textDecoration: "none" }}>FAQ</a>
+        <nav className="lp-nav-links" style={{ display: "flex", alignItems: "center", gap: 28, fontSize: 14, fontWeight: 500 }}>
+          <a className="lp-nav-link" href="#features" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Features</a>
+          <a className="lp-nav-link" href="#devices" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Devices</a>
+          <a className="lp-nav-link" href="/blog/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Blog</a>
+          <a className="lp-nav-link" href="#faq" style={{ color: THEME.inkSoft, textDecoration: "none" }}>FAQ</a>
           <a
+            className="lp-nav-cta"
             href="https://github.com/anglinb/LinkPower-Companion"
             style={{
               padding: "8px 16px",
@@ -264,6 +267,7 @@ function Hero() {
       />
 
       <div
+        className="lp-hero-grid"
         style={{
           position: "relative",
           maxWidth: 1120,
@@ -306,6 +310,7 @@ function Hero() {
           </div>
 
           <h1
+            className="lp-hero-headline"
             style={{
               fontSize: "clamp(40px, 6vw, 76px)",
               lineHeight: 0.96,
@@ -398,9 +403,10 @@ function Hero() {
 
         {/* Hero phone */}
         <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-          <div style={{ position: "relative", width: "min(420px, 100%)" }}>
+          <div className="lp-hero-phone-wrap" style={{ position: "relative", width: "min(420px, 100%)" }}>
             {/* Floating accent badges */}
             <div
+              className="lp-hero-badge-left"
               style={{
                 position: "absolute",
                 top: "12%",
@@ -437,6 +443,7 @@ function Hero() {
               </div>
             </div>
             <div
+              className="lp-hero-badge-right"
               style={{
                 position: "absolute",
                 bottom: "16%",
@@ -472,7 +479,7 @@ function Hero() {
               </div>
             </div>
 
-            <Phone src="/screenshots/en/02-dashboard.png" alt="Live battery dashboard" />
+            <Phone src="/screenshots/en/02-dashboard.webp" alt="Live battery dashboard" />
           </div>
         </div>
       </div>
@@ -524,7 +531,7 @@ function FeatureCard({
 
 function Features() {
   return (
-    <section id="features" style={{ background: THEME.mist, padding: "96px 24px" }}>
+    <section id="features" className="lp-section" style={{ background: THEME.mist, padding: "96px 24px" }}>
       <div style={{ maxWidth: 1120, margin: "0 auto" }}>
         <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 56px" }}>
           <div
@@ -605,8 +612,9 @@ function Spotlight({
   eyebrowColor?: string;
 }) {
   return (
-    <section style={{ background, padding: "96px 24px", overflow: "hidden", position: "relative" }}>
+    <section className="lp-section" style={{ background, padding: "96px 24px", overflow: "hidden", position: "relative" }}>
       <div
+        className="lp-spotlight-grid"
         style={{
           maxWidth: 1120,
           margin: "0 auto",
@@ -665,7 +673,7 @@ function Spotlight({
         </div>
 
         <div style={{ order: reverse ? 1 : 2, display: "flex", justifyContent: "center" }}>
-          <div style={{ width: "min(360px, 100%)" }}>
+          <div className="lp-spotlight-phone-wrap" style={{ width: "min(360px, 100%)" }}>
             <Phone src={image} alt={alt} />
           </div>
         </div>
@@ -680,6 +688,7 @@ function Spotlight({
 function LiveActivities() {
   return (
     <section
+      className="lp-section-tall"
       style={{
         position: "relative",
         overflow: "hidden",
@@ -796,6 +805,7 @@ function LiveActivities() {
 
         {/* Two phones side by side */}
         <div
+          className="lp-live-phones"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -829,7 +839,7 @@ function LiveActivities() {
             >
               ▲ Charging
             </div>
-            <Phone src="/screenshots/en/live-charging.png" alt="Live activity — charging" rotate={-2} />
+            <Phone src="/screenshots/en/live-charging.webp" alt="Live activity — charging" rotate={-2} />
           </div>
 
           {/* Discharging */}
@@ -856,7 +866,7 @@ function LiveActivities() {
             >
               ▼ Discharging
             </div>
-            <Phone src="/screenshots/en/live-discharging.png" alt="Live activity — discharging" rotate={2} />
+            <Phone src="/screenshots/en/live-discharging.webp" alt="Live activity — discharging" rotate={2} />
           </div>
         </div>
 
@@ -967,7 +977,7 @@ function Devices() {
     { name: "Link-Power+", code: "LP+", model: "BP4SL3", features: ["DC port control"] },
   ];
   return (
-    <section id="devices" style={{ background: "#fff", padding: "96px 24px" }}>
+    <section id="devices" className="lp-section" style={{ background: "#fff", padding: "96px 24px" }}>
       <div style={{ maxWidth: 1120, margin: "0 auto" }}>
         <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 56px" }}>
           <div
@@ -1055,6 +1065,141 @@ function Devices() {
   );
 }
 
+function FromTheBlog() {
+  // Show the three most recent posts from the registry. The full list
+  // lives at /blog. Pushing link equity from the homepage into each
+  // post is a deliberate SEO move — the homepage is the strongest URL
+  // on the site by external link count.
+  const recent = posts.slice(0, 3);
+  return (
+    <section style={{ background: THEME.cloud, padding: "96px 24px" }}>
+      <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 48px" }}>
+          <div
+            style={{
+              fontSize: 12,
+              fontWeight: 800,
+              color: THEME.blue,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              marginBottom: 14,
+            }}
+          >
+            From the blog
+          </div>
+          <h2
+            style={{
+              fontSize: "clamp(32px, 4vw, 48px)",
+              fontWeight: 900,
+              color: THEME.ink,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.05,
+              margin: "0 0 12px",
+            }}
+          >
+            Guides for getting more out of your Link-Power.
+          </h2>
+        </div>
+
+        <ul
+          style={{
+            listStyle: "none",
+            margin: 0,
+            padding: 0,
+            display: "grid",
+            gap: 16,
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+          }}
+        >
+          {recent.map((post) => (
+            <li key={post.slug}>
+              <a
+                href={`/blog/${post.slug}/`}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
+                  background: "#fff",
+                  border: `1px solid ${THEME.hairline}`,
+                  borderRadius: 18,
+                  padding: 24,
+                  textDecoration: "none",
+                  color: THEME.ink,
+                  height: "100%",
+                  boxShadow:
+                    "0 1px 0 rgba(255,255,255,0.6) inset, 0 4px 16px -8px rgba(15,23,42,0.06)",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 800,
+                    color: THEME.blueDeep,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {post.eyebrow}
+                </span>
+                <h3
+                  style={{
+                    fontSize: 18,
+                    fontWeight: 800,
+                    letterSpacing: "-0.015em",
+                    lineHeight: 1.3,
+                    margin: "4px 0 4px",
+                    color: THEME.ink,
+                  }}
+                >
+                  {post.title}
+                </h3>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: 14,
+                    color: THEME.muted,
+                    lineHeight: 1.55,
+                    fontWeight: 500,
+                  }}
+                >
+                  {post.excerpt}
+                </p>
+                <div
+                  style={{
+                    marginTop: "auto",
+                    paddingTop: 12,
+                    fontSize: 13,
+                    color: THEME.blueDeep,
+                    fontWeight: 700,
+                  }}
+                >
+                  {post.readTime} min read →
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div style={{ textAlign: "center", marginTop: 32 }}>
+          <a
+            href="/blog/"
+            style={{
+              color: THEME.blueDeep,
+              fontWeight: 800,
+              fontSize: 15,
+              textDecoration: "none",
+              borderBottom: `2px solid ${THEME.blueDeep}`,
+              paddingBottom: 2,
+            }}
+          >
+            See all posts →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Faq() {
   const items = [
     {
@@ -1080,7 +1225,7 @@ function Faq() {
   ];
 
   return (
-    <section id="faq" style={{ background: THEME.mist, padding: "96px 24px" }}>
+    <section id="faq" className="lp-section" style={{ background: THEME.mist, padding: "96px 24px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <div style={{ fontSize: 12, fontWeight: 800, color: THEME.blue, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 14 }}>
@@ -1128,6 +1273,7 @@ function Faq() {
 function CTA() {
   return (
     <section
+      className="lp-section-tall"
       style={{
         position: "relative",
         overflow: "hidden",
@@ -1230,6 +1376,7 @@ function Footer() {
   return (
     <footer style={{ background: "#fff", borderTop: `1px solid ${THEME.hairline}`, padding: "40px 24px 56px" }}>
       <div
+        className="lp-footer-row"
         style={{
           maxWidth: 1120,
           margin: "0 auto",
@@ -1263,12 +1410,18 @@ function Footer() {
             <span style={{ color: THEME.subtle }}>MIT licensed · iOS 17+</span>
           </p>
         </div>
-        <div style={{ display: "flex", gap: 28, fontSize: 13, fontWeight: 600 }}>
+        <div className="lp-footer-links" style={{ display: "flex", gap: 28, fontSize: 13, fontWeight: 600 }}>
           <a href="#features" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Features</a>
           <a href="#devices" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Devices</a>
+          <a href="/blog/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Blog</a>
           <a href="#faq" style={{ color: THEME.inkSoft, textDecoration: "none" }}>FAQ</a>
-          <a href="/screenshots" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Screenshots</a>
+          <a href="/manual/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>User Manual</a>
+          <a href="/linkpower-1-quick-start/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>LP1 Quick Start</a>
+          <a href="/linkpower-2-quick-start/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>LP2 Quick Start</a>
+          <a href="/support/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Support</a>
           <a href="https://github.com/anglinb/LinkPower-Companion" style={{ color: THEME.inkSoft, textDecoration: "none" }}>GitHub</a>
+          <a href="/privacy/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Privacy</a>
+          <a href="/terms/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Terms</a>
         </div>
       </div>
     </footer>
@@ -1303,7 +1456,7 @@ export default function HomePage() {
           { icon: "gauge", label: "Estimated runtime, updated live", color: THEME.charging },
           { icon: "ble", label: "Notification-based, not polled", color: THEME.charging },
         ]}
-        image="/screenshots/en/02-dashboard.png"
+        image="/screenshots/en/02-dashboard.webp"
         alt="Live battery dashboard"
         background={`radial-gradient(ellipse at 30% 20%, #14283C 0%, ${THEME.near} 55%, #04080F 100%)`}
         textColor="#fff"
@@ -1326,7 +1479,7 @@ export default function HomePage() {
           { icon: "shield", label: "Protect sensitive electronics" },
           { icon: "bolt", label: "Persisted on the device", color: THEME.discharging },
         ]}
-        image="/screenshots/en/04-limits.png"
+        image="/screenshots/en/04-limits.webp"
         alt="USB-C power limits"
         reverse
         background={`linear-gradient(180deg, #fff 0%, ${THEME.blueWash} 100%)`}
@@ -1347,7 +1500,7 @@ export default function HomePage() {
           { icon: "radio", label: "Daily, weekly, monthly", color: THEME.amber },
           { icon: "bolt", label: "Runs on-device, even when phone is away", color: THEME.amber },
         ]}
-        image="/screenshots/en/05-timer.png"
+        image="/screenshots/en/05-timer.webp"
         alt="Timer scheduler"
         background={`linear-gradient(165deg, #061322 0%, #0E2236 60%, #163554 100%)`}
         textColor="#fff"
@@ -1356,6 +1509,7 @@ export default function HomePage() {
       />
 
       <Devices />
+      <FromTheBlog />
       <Faq />
       <CTA />
       <Footer />

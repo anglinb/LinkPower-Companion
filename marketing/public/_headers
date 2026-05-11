@@ -1,0 +1,13 @@
+# Cloudflare Pages headers file. Read at edge time to set response
+# headers for matching paths.
+#
+# Why we need this: Next.js 16 emits per-post Open Graph images at
+# `/blog/<slug>/opengraph-image` (no file extension), and Cloudflare
+# Pages defaults to `application/octet-stream` when the extension is
+# missing. Most social crawlers content-sniff PNG bytes, but a few
+# (LinkedIn, some bots) honor only `Content-Type` — so we set it
+# explicitly to keep the share preview reliable everywhere.
+
+/blog/*/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400, s-maxage=604800
