@@ -21,7 +21,7 @@ export interface Post {
   targetKeyword: string;
   /** Eyebrow chip text on the post hero. */
   eyebrow: string;
-  /** Hero screenshot from `/public/screenshots/en/`. */
+  /** Hero screenshot from `/public/blog-assets/en/`. */
   heroImage?: string;
   /** Alt text for the hero image. Required when `heroImage` is set. */
   heroImageAlt?: string;
@@ -41,7 +41,7 @@ export const posts: Post[] = [
     date: "2026-05-05",
     targetKeyword: "peakdo ios app",
     eyebrow: "iOS app",
-    heroImage: "/screenshots/en/02-dashboard.webp",
+    heroImage: "/blog-assets/en/02-dashboard.webp",
     heroImageAlt: "LinkPower Companion live battery dashboard on iPhone",
     readTime: 6,
   },
@@ -56,7 +56,7 @@ export const posts: Post[] = [
     date: "2026-05-05",
     targetKeyword: "peakdo bluefy alternative",
     eyebrow: "Bluefy alternative",
-    heroImage: "/screenshots/en/live-charging.webp",
+    heroImage: "/blog-assets/en/live-charging.webp",
     heroImageAlt:
       "LinkPower Companion Live Activity showing charging state on the Lock Screen",
     readTime: 7,
@@ -72,7 +72,7 @@ export const posts: Post[] = [
     date: "2026-05-05",
     targetKeyword: "starlink mini battery monitor iphone",
     eyebrow: "Starlink Mini",
-    heroImage: "/screenshots/en/widget.webp",
+    heroImage: "/blog-assets/en/widget.webp",
     heroImageAlt:
       "LinkPower Companion Home Screen widget showing Link-Power battery state",
     readTime: 7,
@@ -88,7 +88,7 @@ export const posts: Post[] = [
     date: "2026-05-05",
     targetKeyword: "schedule peakdo dc port",
     eyebrow: "How-to",
-    heroImage: "/screenshots/en/05-timer.webp",
+    heroImage: "/blog-assets/en/05-timer.webp",
     heroImageAlt: "LinkPower Companion timer editor on iPhone",
     readTime: 6,
   },

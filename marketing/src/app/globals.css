@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================================
+   Mobile responsive overrides.
+   The site uses inline styles tuned for desktop. These media queries
+   override the worst offenders on narrow viewports.
+   ========================================================================= */
+
+@media (max-width: 880px) {
+  /* Hero grid: collapse to single column */
+  .lp-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 56px !important;
+    padding-bottom: 24px !important;
+  }
+  .lp-hero-phone-wrap {
+    max-width: 300px !important;
+  }
+  /* Pull the floating badges back inside the viewport */
+  .lp-hero-badge-left {
+    left: -2% !important;
+    top: 6% !important;
+    transform: scale(0.82);
+    transform-origin: left top;
+  }
+  .lp-hero-badge-right {
+    right: -2% !important;
+    bottom: 10% !important;
+    transform: scale(0.82);
+    transform-origin: right bottom;
+  }
+
+  /* Spotlight blocks: collapse to single column */
+  .lp-spotlight-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .lp-spotlight-phone-wrap {
+    width: min(280px, 100%) !important;
+    margin: 0 auto !important;
+  }
+
+  /* LiveActivities: collapse phones, keep them readable */
+  .lp-live-phones {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    max-width: 320px !important;
+  }
+
+  /* Section padding: tighter on mobile */
+  .lp-section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+  .lp-section-tall {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  /* Top nav: hide the textual links, keep just the brand + CTA */
+  .lp-nav-links {
+    gap: 12px !important;
+  }
+  .lp-nav-link {
+    display: none !important;
+  }
+  .lp-nav-cta {
+    padding: 7px 12px !important;
+    font-size: 12px !important;
+  }
+  .lp-brand-text {
+    font-size: 14px !important;
+  }
+
+  /* Help-page hero buttons: full-width and stacked */
+  .lp-help-hero-actions {
+    width: 100% !important;
+  }
+  .lp-help-hero-actions > a {
+    flex: 1 1 100% !important;
+    justify-content: center !important;
+  }
+  .lp-help-hero-actions .lp-store-links {
+    flex: 1 1 100% !important;
+  }
+  .lp-help-hero-actions .lp-store-links > a {
+    flex: 1 1 100% !important;
+  }
+
+  /* Help-page TOC: single column on phone */
+  .lp-help-toc {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Help-page comparison grid: 1 column on phone */
+  .lp-help-compare {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer: stack the columns */
+  .lp-footer-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+  .lp-footer-links {
+    flex-wrap: wrap !important;
+    gap: 14px 18px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Even smaller phones */
+@media (max-width: 420px) {
+  .lp-hero-headline {
+    font-size: clamp(34px, 11vw, 44px) !important;
+  }
+  .lp-help-hero-headline {
+    font-size: clamp(30px, 9vw, 40px) !important;
+  }
+  /* Pad container edges a touch tighter */
+  .lp-page-pad {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+
+/* Shared touch feedback. Keep guide text selectable and normal page scrolling. */
+:root { --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
+html { -webkit-text-size-adjust: 100%; }
+a, button, summary { touch-action: manipulation; }
+button, summary { -webkit-user-select: none; user-select: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid #1573b2;
+  outline-offset: 4px;
+}
+.lp-pressable {
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 160ms var(--ease-out), opacity 160ms var(--ease-out);
+}
+.lp-pressable:active:not(:focus-visible) { transform: scale(0.97); opacity: 0.85; }
+.lp-pressable:focus-visible { transition: none; }
+summary:active { opacity: 0.75; }
+@media (prefers-reduced-motion: reduce) {
+  .lp-pressable { transition: opacity 100ms linear; }
+  .lp-pressable:active:not(:focus-visible) { transform: none; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  header { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: #fff !important; }
+}

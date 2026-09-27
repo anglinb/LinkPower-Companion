@@ -1,5 +1,5 @@
 // Body content for the "Starlink Mini battery monitor for iPhone" post.
-import { APP_STORE_URL } from "../../components/theme";
+import { StoreLinks } from "../../components/StoreLinks";
 import type { FAQ } from "../../components/BlogShell";
 
 export const faqs: FAQ[] = [
@@ -263,14 +263,10 @@ export default function Body() {
         constantly making decisions about power. The information to make
         those decisions exists — it&apos;s sitting on your battery&apos;s
         BLE chip — and getting it onto your iPhone Lock Screen takes one
-        free app.
+        app, available to download free with in-app purchases.
       </p>
 
-      <p>
-        <a href={APP_STORE_URL} data-cta="body-end">
-          <strong>Get Link-Power Companion free on the App Store →</strong>
-        </a>
-      </p>
+      <StoreLinks variant="prose" dataCta="body-end" />
     </>
   );
 }
