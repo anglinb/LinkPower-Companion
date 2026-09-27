@@ -1,5 +1,5 @@
 // Body content for the "PeakDo without Bluefy" post.
-import { APP_STORE_URL } from "../../components/theme";
+import { StoreLinks } from "../../components/StoreLinks";
 import type { FAQ } from "../../components/BlogShell";
 
 export const faqs: FAQ[] = [
@@ -176,11 +176,7 @@ export default function Body() {
         </li>
       </ol>
 
-      <p>
-        <a href={APP_STORE_URL} data-cta="mid">
-          <strong>Get Link-Power Companion →</strong>
-        </a>
-      </p>
+      <StoreLinks variant="prose" dataCta="mid" />
 
       <h2>When you might still want Bluefy</h2>
 
@@ -210,25 +206,11 @@ export default function Body() {
         upgrade.
       </p>
 
-      <h2>One more thing</h2>
-
-      <p>
-        Companion is open source under MIT. If you don&apos;t trust
-        third-party apps in your Bluetooth security perimeter, you can
-        audit the source on GitHub before installing. PeakDo&apos;s Web
-        App is more or less open too (the JavaScript ships to your
-        browser), so this is parity, not asymmetry.
-      </p>
-
       <p>
         Either way:
       </p>
 
-      <p>
-        <a href={APP_STORE_URL} data-cta="body-end">
-          <strong>Try Link-Power Companion free →</strong>
-        </a>
-      </p>
+      <StoreLinks variant="prose" dataCta="body-end" />
     </>
   );
 }

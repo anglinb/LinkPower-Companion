@@ -1,5 +1,5 @@
 // Body content for the "Schedule PeakDo DC port" how-to post.
-import { APP_STORE_URL } from "../../components/theme";
+import { StoreLinks } from "../../components/StoreLinks";
 import type { FAQ } from "../../components/BlogShell";
 
 export const faqs: FAQ[] = [
@@ -61,7 +61,7 @@ export default function Body() {
       <p>
         This is the step-by-step.{" "}
         <a href="/" data-cta="hero">Link-Power Companion</a>{" "}
-        is the iOS app — free to download with in-app purchases on the App Store. iOS 17+ required.
+        is the native phone app — free to download with in-app purchases on the App Store and Google Play.
       </p>
 
       <h2>What you can schedule</h2>
@@ -255,11 +255,7 @@ export default function Body() {
         runs forever.
       </p>
 
-      <p>
-        <a href={APP_STORE_URL} data-cta="body-end">
-          <strong>Download Link-Power Companion free →</strong>
-        </a>
-      </p>
+      <StoreLinks variant="prose" dataCta="body-end" />
     </>
   );
 }

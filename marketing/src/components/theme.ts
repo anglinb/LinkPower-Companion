@@ -25,4 +25,5 @@ export const THEME = {
 export const SITE_URL = "https://linkpower.app";
 export const APP_STORE_URL =
   "https://apps.apple.com/us/app/linkpower-companion/id6762404390";
-export const GITHUB_URL = "https://github.com/anglinb/LinkPower-Companion";
+export const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=app.linkpower.companion";

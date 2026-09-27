@@ -6,7 +6,8 @@
 import type { ReactNode, CSSProperties } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
-import { APP_STORE_URL, THEME } from "./theme";
+import { StoreLinks } from "./StoreLinks";
+import { THEME } from "./theme";
 import type { Post } from "../data/posts";
 
 export interface FAQ {
@@ -277,10 +278,11 @@ export function BlogShell({ post, related, faqs, children }: Props) {
               background: `linear-gradient(165deg, ${THEME.near} 0%, #0E2236 60%, #163554 100%)`,
               padding: "28px 28px",
               color: "#fff",
-              display: "grid",
+              display: "flex",
               gap: 16,
               alignItems: "center",
-              gridTemplateColumns: "auto 1fr auto",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
             }}
           >
             <span
@@ -314,32 +316,10 @@ export function BlogShell({ post, related, faqs, children }: Props) {
                 Plug it in. See everything.
               </div>
               <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)" }}>
-                Free to download. In-app purchases. iOS 17+.
+                Free to download. In-app purchases. iOS 17+ and Android 10+.
               </div>
             </div>
-            <a
-              href={APP_STORE_URL}
-              data-cta="post-cta"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                background: "#fff",
-                color: THEME.ink,
-                padding: "12px 18px",
-                borderRadius: 10,
-                fontWeight: 800,
-                fontSize: 14,
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <svg width={16} height={16} viewBox="0 0 24 24" fill={THEME.ink} aria-hidden>
-                <path d="M16.7 13.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2.1-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.4 1-4.3 2.6-1.8 3.2-.5 7.9 1.3 10.4.9 1.3 1.9 2.7 3.3 2.6 1.3-.1 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-2.9 1.5-3-.1-.1-2.8-1.1-2.8-4.3-.1-2.6 1.7-3.7 1.8-3.7-1-1.5-2.5-1.6-3-1.6Z" />
-                <path d="M14.4 5c.8-.9 1.3-2.2 1.2-3.5-1.1.1-2.4.8-3.2 1.6-.7.8-1.4 2-1.2 3.3 1.2.1 2.4-.5 3.2-1.4Z" />
-              </svg>
-              App Store
-            </a>
+            <StoreLinks variant="light" dataCta="post-cta" />
           </aside>
 
           {/* Related posts */}
@@ -468,7 +448,9 @@ export function BlogShell({ post, related, faqs, children }: Props) {
           text-decoration-thickness: 1.5px;
           font-weight: 600;
         }
-        .lp-prose a:hover { color: ${THEME.blueDarker}; }
+        @media (hover: hover) and (pointer: fine) {
+          .lp-prose a:hover { color: ${THEME.blueDarker}; }
+        }
         .lp-prose strong { color: ${THEME.ink}; font-weight: 700; }
         .lp-prose em { color: ${THEME.ink}; font-style: italic; }
         .lp-prose blockquote {

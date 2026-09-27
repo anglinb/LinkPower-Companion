@@ -1,7 +1,8 @@
 // Sticky top nav, copied from `src/app/page.tsx` so blog pages feel
 // native. Single source of truth — if the homepage nav changes, update
 // here too.
-import { APP_STORE_URL, THEME } from "./theme";
+import { StoreLinks } from "./StoreLinks";
+import { THEME } from "./theme";
 
 interface Props {
   /** Highlights the matching link with a stronger color + underline. */
@@ -100,20 +101,7 @@ export function Nav({ current }: Props) {
           <a href="/#faq" style={linkStyle("faq")}>
             FAQ
           </a>
-          <a
-            href={APP_STORE_URL}
-            style={{
-              padding: "8px 16px",
-              borderRadius: 999,
-              background: THEME.blue,
-              color: "#fff",
-              textDecoration: "none",
-              fontWeight: 700,
-              fontSize: 13,
-            }}
-          >
-            Get the app
-          </a>
+          <StoreLinks variant="nav" linkClassName="lp-nav-cta" />
         </nav>
       </div>
     </header>

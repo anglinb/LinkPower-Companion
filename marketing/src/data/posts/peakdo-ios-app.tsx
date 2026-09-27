@@ -2,14 +2,14 @@
 // shared <BlogShell>, which provides the hero, breadcrumbs, FAQ, CTA
 // and related-posts grid. We intentionally keep the body component
 // pure JSX (no MDX) to match the existing inline-style aesthetic.
-import { APP_STORE_URL } from "../../components/theme";
+import { StoreLinks } from "../../components/StoreLinks";
 
 import type { FAQ } from "../../components/BlogShell";
 
 export const faqs: FAQ[] = [
   {
     q: "Does PeakDo make a native iPhone app?",
-    a: "No. PeakDo ships a Web App at pwa.peakdo.ca that you launch from a special browser called Bluefy (since Safari doesn't support Web Bluetooth). Link-Power Companion is the unofficial native iOS app — built by the community and free to download with in-app purchases on the App Store.",
+    a: "No. PeakDo ships a Web App at pwa.peakdo.ca that you launch from a special browser called Bluefy (since Safari doesn't support Web Bluetooth). Link-Power Companion is the unofficial native app — built by the community and free to download with in-app purchases on the App Store and Google Play.",
   },
   {
     q: "Is Link-Power Companion safe to use?",
@@ -49,8 +49,7 @@ export default function Body() {
         LP1, LP2, and LP+. It&apos;s a real app: live battery telemetry
         on a Lock Screen widget, Live Activity that updates while
         you&apos;re using the device, a real timer editor, real DC and
-        USB-C controls. It&apos;s open source, it&apos;s free to download with in-app purchases, and
-        it&apos;s on the App Store.
+        USB-C controls. It&apos;s free to download with in-app purchases on the App Store and Google Play.
       </p>
 
       <h2>Why PeakDo doesn&apos;t ship a native iOS app</h2>
@@ -91,9 +90,9 @@ export default function Body() {
           fonts, wrong navigation, wrong gestures.
         </li>
         <li>
-          <strong>App Store distribution.</strong> Updates ship through
-          the App Store; you&apos;re not pasting URLs into Bluefy every
-          time you set up a new device.
+          <strong>Store distribution.</strong> Updates ship through the
+          App Store and Google Play; you&apos;re not pasting URLs into
+          Bluefy every time you set up a new device.
         </li>
       </ul>
 
@@ -102,8 +101,7 @@ export default function Body() {
       <p>
         It&apos;s a SwiftUI iPhone app written directly against
         Apple&apos;s CoreBluetooth framework. Zero third-party
-        dependencies, zero analytics, zero accounts. Source is on
-        GitHub.
+        dependencies, zero analytics, zero accounts.
       </p>
 
       <p>The features that matter day-to-day:</p>
@@ -152,11 +150,7 @@ export default function Body() {
         </li>
       </ul>
 
-      <p>
-        <a href={APP_STORE_URL} data-cta="mid">
-          <strong>Get Link-Power Companion on the App Store →</strong>
-        </a>
-      </p>
+      <StoreLinks variant="prose" dataCta="mid" />
 
       <h2>What about the Web App? When is it the right choice?</h2>
 
@@ -182,17 +176,16 @@ export default function Body() {
       </ul>
 
       <p>
-        Use the Web App if you primarily live on Android or you&apos;re
-        configuring a device from a laptop. Use Link-Power Companion if
-        you&apos;re on iPhone and you want the Lock Screen widget, the
-        Live Activity, and a UI that doesn&apos;t require a third-party
-        browser.
+        Use the Web App if you&apos;re configuring a device from a laptop
+        or only trust PeakDo&apos;s first-party client. Use Link-Power
+        Companion if you&apos;re on iPhone or Android and you want a
+        native UI that doesn&apos;t require a third-party browser.
       </p>
 
       <h2>Privacy &amp; the &quot;unofficial&quot; question</h2>
 
       <p>
-        Two things people ask in the App Store reviews and on GitHub:
+        Two things people ask in the App Store reviews:
       </p>
 
       <p>
@@ -213,7 +206,7 @@ export default function Body() {
       <ol>
         <li>
           Install <strong>Link-Power Companion</strong> from the App
-          Store on iOS 17 or later.
+          Store or Google Play.
         </li>
         <li>
           Power your Link-Power on. Confirm the BLE icon is showing on
@@ -252,16 +245,12 @@ export default function Body() {
         PeakDo built capable hardware. Their Web-App-via-Bluefy approach
         is technically reasonable but feels rough on iPhone — and it
         leaves Live Activities, Lock Screen widgets, and CoreBluetooth
-        reliability on the table. If you&apos;re on iOS,{" "}
+        reliability on the table. If you&apos;re on iOS or Android,{" "}
         <a href="/" data-cta="closing">Link-Power Companion</a>{" "}
         is the answer.
       </p>
 
-      <p>
-        <a href={APP_STORE_URL} data-cta="body-end">
-          <strong>Download Link-Power Companion free →</strong>
-        </a>
-      </p>
+      <StoreLinks variant="prose" dataCta="body-end" />
     </>
   );
 }

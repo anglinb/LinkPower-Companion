@@ -1,6 +1,6 @@
 // Footer extracted from `src/app/page.tsx`. Reused on every blog page
 // for consistency.
-import { GITHUB_URL, THEME } from "./theme";
+import { THEME } from "./theme";
 
 export function Footer() {
   return (
@@ -69,7 +69,7 @@ export function Footer() {
             respective owners. Use at your own risk.
             <br />
             <span style={{ color: THEME.subtle }}>
-              MIT licensed · iOS 17+
+              iOS 17+ · Android 10+
             </span>
           </p>
         </div>
@@ -102,9 +102,6 @@ export function Footer() {
           </a>
           <a href="/linkpower-2-quick-start/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>
             LP2 Quick Start
-          </a>
-          <a href={GITHUB_URL} style={{ color: THEME.inkSoft, textDecoration: "none" }}>
-            GitHub
           </a>
           <a href="/troubleshooting/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>
             Troubleshooting

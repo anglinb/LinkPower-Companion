@@ -1,5 +1,5 @@
 // Body content for the "Starlink Mini battery monitor for iPhone" post.
-import { APP_STORE_URL } from "../../components/theme";
+import { StoreLinks } from "../../components/StoreLinks";
 import type { FAQ } from "../../components/BlogShell";
 
 export const faqs: FAQ[] = [
@@ -266,11 +266,7 @@ export default function Body() {
         app, available to download free with in-app purchases.
       </p>
 
-      <p>
-        <a href={APP_STORE_URL} data-cta="body-end">
-          <strong>Get Link-Power Companion free to download with in-app purchases on the App Store →</strong>
-        </a>
-      </p>
+      <StoreLinks variant="prose" dataCta="body-end" />
     </>
   );
 }

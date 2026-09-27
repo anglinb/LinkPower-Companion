@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "INCLUDE_SCREENSHOTS=1 next dev",
+    "build": "next build && node scripts/strip-screenshots.mjs",
+    "build:with-screenshots": "INCLUDE_SCREENSHOTS=1 next build",
     "pdf": "node scripts/generate-manual-pdf.mjs",
     "validate:jsonld": "node scripts/validate-jsonld.mjs",
     "start": "next start"

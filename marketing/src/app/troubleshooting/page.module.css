@@ -1,4 +1,4 @@
-.page { background: #f2f5f8; color: #0f172a; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }
+.page { background: #f2f5f8; color: #0f172a; min-height: 100svh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }
 .page a { color: #0e5285; text-underline-offset: 4px; }
 .page a:focus-visible { outline: 3px solid #1573b2; outline-offset: 4px; border-radius: 4px; }
 .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; padding: 14px max(20px, calc((100% - 760px) / 2)); background: white; border-bottom: 1px solid #e5eaf1; }

@@ -83,6 +83,7 @@ export default function TroubleshootingPage() {
         ))}
         <aside className={styles.support}>
           <h2>Still stuck?</h2>
+          <p>Setting up LP3? See the <a href="/linkpower-3-quick-start/">quick start</a> or <a href="/linkpower-3-connection-guide/">Bluetooth and Wi-Fi guide</a>.</p>
           <p>Send your battery model, firmware version if available, app version, phone model, and a screenshot of what you see. Tell us what you’ve already tried.</p>
           <a href="/support/">Contact support →</a>
         </aside>

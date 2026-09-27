@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import { StoreLinks } from "../components/StoreLinks";
 import { posts } from "../data/posts";
 
 /* =========================================================================
@@ -207,21 +208,7 @@ function Nav() {
           <a className="lp-nav-link" href="#devices" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Devices</a>
           <a className="lp-nav-link" href="/blog/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Blog</a>
           <a className="lp-nav-link" href="#faq" style={{ color: THEME.inkSoft, textDecoration: "none" }}>FAQ</a>
-          <a
-            className="lp-nav-cta"
-            href="https://github.com/anglinb/LinkPower-Companion"
-            style={{
-              padding: "8px 16px",
-              borderRadius: 999,
-              background: THEME.blue,
-              color: "#fff",
-              textDecoration: "none",
-              fontWeight: 700,
-              fontSize: 13,
-            }}
-          >
-            Get the app
-          </a>
+          <StoreLinks variant="nav" linkClassName="lp-nav-cta" />
         </nav>
       </div>
     </header>
@@ -306,7 +293,7 @@ function Hero() {
                 boxShadow: `0 0 10px ${THEME.charging}`,
               }}
             />
-            LinkPower app · now on the App Store
+            LinkPower app · now on iOS & Android
           </div>
 
           <h1
@@ -344,34 +331,13 @@ function Hero() {
               fontWeight: 500,
             }}
           >
-            The <strong style={{ fontWeight: 700, color: "inherit" }}>LinkPower app</strong> is a clean, native iOS companion for the
+            The <strong style={{ fontWeight: 700, color: "inherit" }}>LinkPower app</strong> is a clean, native companion for the
             PeakDo Link-Power family. Live battery telemetry, DC port control, USB-C limits,
             and on/off scheduling — all over Bluetooth.
           </p>
 
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-            <a
-              href="https://apps.apple.com/us/app/linkpower-companion/id6762404390"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                padding: "14px 22px",
-                borderRadius: 12,
-                background: THEME.ink,
-                color: "#fff",
-                textDecoration: "none",
-                fontWeight: 700,
-                fontSize: 15,
-                boxShadow: "0 8px 20px -8px rgba(15,23,42,0.5)",
-              }}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
-                <path d="M16.7 13.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2.1-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.4 1-4.3 2.6-1.8 3.2-.5 7.9 1.3 10.4.9 1.3 1.9 2.7 3.3 2.6 1.3-.1 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-2.9 1.5-3-.1-.1-2.8-1.1-2.8-4.3-.1-2.6 1.7-3.7 1.8-3.7-1-1.5-2.5-1.6-3-1.6Z" />
-                <path d="M14.4 5c.8-.9 1.3-2.2 1.2-3.5-1.1.1-2.4.8-3.2 1.6-.7.8-1.4 2-1.2 3.3 1.2.1 2.4-.5 3.2-1.4Z" />
-              </svg>
-              Download on the App Store
-            </a>
+            <StoreLinks variant="hero" />
             <a
               href="#features"
               style={{
@@ -393,11 +359,9 @@ function Hero() {
           </div>
 
           <div style={{ marginTop: 36, display: "flex", gap: 28, color: THEME.muted, fontSize: 13, fontWeight: 600 }}>
-            <span>iOS 17+</span>
+            <span>iOS 17+ · Android 10+</span>
             <span style={{ color: THEME.hairline }}>·</span>
             <span>Zero ads, zero tracking</span>
-            <span style={{ color: THEME.hairline }}>·</span>
-            <span>Open source</span>
           </div>
         </div>
 
@@ -479,7 +443,7 @@ function Hero() {
               </div>
             </div>
 
-            <Phone src="/screenshots/en/02-dashboard.webp" alt="Live battery dashboard" />
+            <Phone src="/blog-assets/en/02-dashboard.webp" alt="Live battery dashboard" />
           </div>
         </div>
       </div>
@@ -571,7 +535,7 @@ function Features() {
             gap: 16,
           }}
         >
-          <FeatureCard icon="ble" title="One-tap BLE pairing" body="Scan, connect, and auto-reconnect to LP1, LP2, and LP+ devices." />
+          <FeatureCard icon="ble" title="One-tap BLE pairing" body="Scan, connect, and auto-reconnect. LP3 support is available in LP3-enabled builds alongside LP1, LP2, and LP+." />
           <FeatureCard icon="gauge" title="Live telemetry" body="Battery level, capacity, voltage, current, and remaining runtime — streamed live." accent={THEME.charging} />
           <FeatureCard icon="plug" title="DC port control" body="Toggle output, monitor power, and flip on bypass mode when you need direct passthrough." />
           <FeatureCard icon="bolt" title="USB-C insight" body="Charging vs discharging state, port temperature, live power readings." accent={THEME.discharging} />
@@ -839,7 +803,7 @@ function LiveActivities() {
             >
               ▲ Charging
             </div>
-            <Phone src="/screenshots/en/live-charging.webp" alt="Live activity — charging" rotate={-2} />
+            <Phone src="/blog-assets/en/live-charging.webp" alt="Live activity — charging" rotate={-2} />
           </div>
 
           {/* Discharging */}
@@ -866,7 +830,7 @@ function LiveActivities() {
             >
               ▼ Discharging
             </div>
-            <Phone src="/screenshots/en/live-discharging.webp" alt="Live activity — discharging" rotate={2} />
+            <Phone src="/blog-assets/en/live-discharging.webp" alt="Live activity — discharging" rotate={2} />
           </div>
         </div>
 
@@ -973,6 +937,7 @@ function LiveActivities() {
 function Devices() {
   const devices = [
     { name: "Link-Power 1", code: "LP1", model: "BP4SL3V1", features: ["Battery", "DC", "USB-C", "Scheduled control"] },
+    { name: "Link-Power 3", code: "LP3", model: "BP4SL3V3", features: ["LP3-enabled builds", "Battery", "USB-C", "Firmware-based controls"] },
     { name: "Link-Power 2", code: "LP2", model: "BP4SL3V2", features: ["Battery", "DC", "USB-C", "DC bypass", "DC input"] },
     { name: "Link-Power+", code: "LP+", model: "BP4SL3", features: ["DC port control"] },
   ];
@@ -1218,10 +1183,6 @@ function Faq() {
       q: "What data leaves my phone?",
       a: "Bluetooth monitoring connects directly to your battery without a PeakDo account. Optional remote monitoring uses a PeakDo cloud account. Purchases and paywall usage use Superwall, and submitted support requests can include diagnostic logs. See our privacy policy for details.",
     },
-    {
-      q: "Is the source available?",
-      a: "Yes — it's MIT licensed and fully open source.",
-    },
   ];
 
   return (
@@ -1325,48 +1286,7 @@ function CTA() {
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.7)", lineHeight: 1.55, margin: "0 0 32px" }}>
           Free to download. Yearly and lifetime purchase options are shown in the app.
         </p>
-        <div style={{ display: "inline-flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
-          <a
-            href="https://apps.apple.com/us/app/linkpower-companion/id6762404390"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              padding: "16px 24px",
-              borderRadius: 12,
-              background: "#fff",
-              color: THEME.ink,
-              textDecoration: "none",
-              fontWeight: 800,
-              fontSize: 15,
-              boxShadow: "0 12px 32px -12px rgba(0,0,0,0.5)",
-            }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill={THEME.ink}>
-              <path d="M16.7 13.3c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2.1-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.4 1-4.3 2.6-1.8 3.2-.5 7.9 1.3 10.4.9 1.3 1.9 2.7 3.3 2.6 1.3-.1 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-2.9 1.5-3-.1-.1-2.8-1.1-2.8-4.3-.1-2.6 1.7-3.7 1.8-3.7-1-1.5-2.5-1.6-3-1.6Z" />
-              <path d="M14.4 5c.8-.9 1.3-2.2 1.2-3.5-1.1.1-2.4.8-3.2 1.6-.7.8-1.4 2-1.2 3.3 1.2.1 2.4-.5 3.2-1.4Z" />
-            </svg>
-            Download on the App Store
-          </a>
-          <a
-            href="https://github.com/anglinb/LinkPower-Companion"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              padding: "16px 22px",
-              borderRadius: 12,
-              background: "rgba(255,255,255,0.08)",
-              color: "#fff",
-              textDecoration: "none",
-              fontWeight: 700,
-              fontSize: 15,
-              border: "1px solid rgba(255,255,255,0.18)",
-            }}
-          >
-            View on GitHub →
-          </a>
-        </div>
+        <StoreLinks variant="light" style={{ justifyContent: "center" }} />
       </div>
     </section>
   );
@@ -1407,7 +1327,7 @@ function Footer() {
             Unofficial. Not affiliated with, endorsed by, or supported by PeakDo Tech, Inc.
             Link-Power and PeakDo are trademarks of their respective owners. Use at your own risk.
             <br />
-            <span style={{ color: THEME.subtle }}>MIT licensed · iOS 17+</span>
+            <span style={{ color: THEME.subtle }}>iOS 17+ · Android 10+</span>
           </p>
         </div>
         <div className="lp-footer-links" style={{ display: "flex", gap: 28, fontSize: 13, fontWeight: 600 }}>
@@ -1418,8 +1338,10 @@ function Footer() {
           <a href="/manual/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>User Manual</a>
           <a href="/linkpower-1-quick-start/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>LP1 Quick Start</a>
           <a href="/linkpower-2-quick-start/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>LP2 Quick Start</a>
+          <a href="/linkpower-3-quick-start/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>LP3 Quick Start</a>
+          <a href="/linkpower-3-connection-guide/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>LP3 Connection Guide</a>
+          <a href="/troubleshooting/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Troubleshooting</a>
           <a href="/support/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Support</a>
-          <a href="https://github.com/anglinb/LinkPower-Companion" style={{ color: THEME.inkSoft, textDecoration: "none" }}>GitHub</a>
           <a href="/privacy/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Privacy</a>
           <a href="/terms/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>Terms</a>
         </div>
@@ -1456,7 +1378,7 @@ export default function HomePage() {
           { icon: "gauge", label: "Estimated runtime, updated live", color: THEME.charging },
           { icon: "ble", label: "Notification-based, not polled", color: THEME.charging },
         ]}
-        image="/screenshots/en/02-dashboard.webp"
+        image="/blog-assets/en/02-dashboard.webp"
         alt="Live battery dashboard"
         background={`radial-gradient(ellipse at 30% 20%, #14283C 0%, ${THEME.near} 55%, #04080F 100%)`}
         textColor="#fff"
@@ -1479,7 +1401,7 @@ export default function HomePage() {
           { icon: "shield", label: "Protect sensitive electronics" },
           { icon: "bolt", label: "Persisted on the device", color: THEME.discharging },
         ]}
-        image="/screenshots/en/04-limits.webp"
+        image="/blog-assets/en/04-limits.webp"
         alt="USB-C power limits"
         reverse
         background={`linear-gradient(180deg, #fff 0%, ${THEME.blueWash} 100%)`}
@@ -1500,7 +1422,7 @@ export default function HomePage() {
           { icon: "radio", label: "Daily, weekly, monthly", color: THEME.amber },
           { icon: "bolt", label: "Runs on-device, even when phone is away", color: THEME.amber },
         ]}
-        image="/screenshots/en/05-timer.webp"
+        image="/blog-assets/en/05-timer.webp"
         alt="Timer scheduler"
         background={`linear-gradient(165deg, #061322 0%, #0E2236 60%, #163554 100%)`}
         textColor="#fff"
