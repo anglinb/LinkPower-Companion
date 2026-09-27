@@ -9,11 +9,11 @@ import type { FAQ } from "../../components/BlogShell";
 export const faqs: FAQ[] = [
   {
     q: "Does PeakDo make a native iPhone app?",
-    a: "No. PeakDo ships a Web App at pwa.peakdo.ca that you launch from a special browser called Bluefy (since Safari doesn't support Web Bluetooth). Link-Power Companion is the unofficial native iOS app — built by the community and free on the App Store.",
+    a: "No. PeakDo ships a Web App at pwa.peakdo.ca that you launch from a special browser called Bluefy (since Safari doesn't support Web Bluetooth). Link-Power Companion is the unofficial native iOS app — built by the community and free to download with in-app purchases on the App Store.",
   },
   {
     q: "Is Link-Power Companion safe to use?",
-    a: "Yes. The app talks to your battery directly over Bluetooth — there are no servers, no analytics, and no accounts. The full source is MIT-licensed on GitHub if you want to audit it.",
+    a: "Bluetooth monitoring connects directly to the battery without a PeakDo account. Optional cloud monitoring uses PeakDo services; purchases and paywall usage use Superwall. Support submissions can include diagnostic logs. See the privacy policy for details.",
   },
   {
     q: "Which devices are supported?",
@@ -49,7 +49,7 @@ export default function Body() {
         LP1, LP2, and LP+. It&apos;s a real app: live battery telemetry
         on a Lock Screen widget, Live Activity that updates while
         you&apos;re using the device, a real timer editor, real DC and
-        USB-C controls. It&apos;s open source, it&apos;s free, and
+        USB-C controls. It&apos;s open source, it&apos;s free to download with in-app purchases, and
         it&apos;s on the App Store.
       </p>
 
@@ -205,13 +205,7 @@ export default function Body() {
       </p>
 
       <p>
-        <strong>&quot;What data leaves my phone?&quot;</strong> None.
-        The app speaks the BLE protocol directly to your battery — no
-        HTTP requests, no analytics SDK, no crash reporter calling home,
-        no account system. Tasks, schedules, power limits — all stored
-        locally. The full source is MIT-licensed on{" "}
-        <a href="https://github.com/anglinb/LinkPower-Companion">GitHub</a>{" "}
-        if you want to audit.
+        <strong>&quot;What data leaves my phone?&quot;</strong> Bluetooth monitoring connects directly to the battery without a PeakDo account. Optional cloud monitoring uses PeakDo services; purchases and paywall usage use Superwall. Support submissions can include diagnostic logs. See the privacy policy for details.
       </p>
 
       <h2>Quick start</h2>

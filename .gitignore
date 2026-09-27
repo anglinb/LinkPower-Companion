@@ -39,4 +39,8 @@ Pods/
 .kanna/
 
 # Closed-source iOS app code (lives in private repo: LinkPower-Companion-Private)
-app/
+/app/
+
+# Local Cloudflare state and secrets
+.wrangler/
+.dev.vars

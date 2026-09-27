@@ -61,7 +61,7 @@ export default function Body() {
       <p>
         This is the step-by-step.{" "}
         <a href="/" data-cta="hero">Link-Power Companion</a>{" "}
-        is the iOS app — free on the App Store. iOS 17+ required.
+        is the iOS app — free to download with in-app purchases on the App Store. iOS 17+ required.
       </p>
 
       <h2>What you can schedule</h2>

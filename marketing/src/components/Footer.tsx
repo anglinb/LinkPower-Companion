@@ -106,6 +106,9 @@ export function Footer() {
           <a href={GITHUB_URL} style={{ color: THEME.inkSoft, textDecoration: "none" }}>
             GitHub
           </a>
+          <a href="/troubleshooting/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>
+            Troubleshooting
+          </a>
           <a href="/support/" style={{ color: THEME.inkSoft, textDecoration: "none" }}>
             Support
           </a>

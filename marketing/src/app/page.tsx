@@ -1216,7 +1216,7 @@ function Faq() {
     },
     {
       q: "What data leaves my phone?",
-      a: "None. The app talks directly to your battery over BLE. There are no servers, no analytics, no accounts.",
+      a: "Bluetooth monitoring connects directly to your battery without a PeakDo account. Optional remote monitoring uses a PeakDo cloud account. Purchases and paywall usage use Superwall, and submitted support requests can include diagnostic logs. See our privacy policy for details.",
     },
     {
       q: "Is the source available?",
@@ -1323,7 +1323,7 @@ function CTA() {
           <span style={{ color: "#5DB1E0" }}>See everything.</span>
         </h2>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.7)", lineHeight: 1.55, margin: "0 0 32px" }}>
-          Free. Open source. No accounts. Just power.
+          Free to download. Yearly and lifetime purchase options are shown in the app.
         </p>
         <div style={{ display: "inline-flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
           <a

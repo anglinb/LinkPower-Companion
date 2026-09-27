@@ -263,12 +263,12 @@ export default function Body() {
         constantly making decisions about power. The information to make
         those decisions exists — it&apos;s sitting on your battery&apos;s
         BLE chip — and getting it onto your iPhone Lock Screen takes one
-        free app.
+        app, available to download free with in-app purchases.
       </p>
 
       <p>
         <a href={APP_STORE_URL} data-cta="body-end">
-          <strong>Get Link-Power Companion free on the App Store →</strong>
+          <strong>Get Link-Power Companion free to download with in-app purchases on the App Store →</strong>
         </a>
       </p>
     </>

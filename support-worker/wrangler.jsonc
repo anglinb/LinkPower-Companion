@@ -1,0 +1,12 @@
+{
+ "name":"linkpower-support", "main":"src/worker.mjs", "compatibility_date":"2026-09-26",
+ "account_id":"f0b125eb8ba8735c5e1c633fc79b2fa9", "workers_dev":false,
+ "routes":[{"pattern":"linkpower.app/api/support*","zone_name":"linkpower.app"},{"pattern":"linkpower.app/api/account-deletion*","zone_name":"linkpower.app"}],
+ // Owner-approved completion window, displayed before confirmation.
+ "vars":{"ACCOUNT_DELETION_WINDOW_DAYS":"30"},
+ "d1_databases":[{"binding":"DB","database_name":"linkpower-support","database_id":"19360cf8-5b8a-471c-9d5f-383a595b0405"}],
+ "r2_buckets":[{"binding":"DIAGNOSTICS","bucket_name":"linkpower-support-diagnostics"}],
+ "send_email":[{"name":"EMAIL","destination_address":"brianranglin@gmail.com"}],
+ "triggers":{"crons":["*/10 * * * *"]},
+ "observability":{"enabled":true}
+}

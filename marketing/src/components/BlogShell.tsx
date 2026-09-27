@@ -314,7 +314,7 @@ export function BlogShell({ post, related, faqs, children }: Props) {
                 Plug it in. See everything.
               </div>
               <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)" }}>
-                Free. Open source. iOS 17+. No accounts.
+                Free to download. In-app purchases. iOS 17+.
               </div>
             </div>
             <a
