@@ -535,7 +535,7 @@ function Features() {
             gap: 16,
           }}
         >
-          <FeatureCard icon="ble" title="One-tap BLE pairing" body="Scan, connect, and auto-reconnect. LP3 support is available in LP3-enabled builds alongside LP1, LP2, and LP+." />
+          <FeatureCard icon="ble" title="One-tap BLE pairing" body="Scan, connect, and auto-reconnect. Works with LP1, LP2, LP+, and LP3. LP3 requires the iOS app, version 2.0 or later." />
           <FeatureCard icon="gauge" title="Live telemetry" body="Battery level, capacity, voltage, current, and remaining runtime — streamed live." accent={THEME.charging} />
           <FeatureCard icon="plug" title="DC port control" body="Toggle output, monitor power, and flip on bypass mode when you need direct passthrough." />
           <FeatureCard icon="bolt" title="USB-C insight" body="Charging vs discharging state, port temperature, live power readings." accent={THEME.discharging} />
@@ -937,7 +937,7 @@ function LiveActivities() {
 function Devices() {
   const devices = [
     { name: "Link-Power 1", code: "LP1", model: "BP4SL3V1", features: ["Battery", "DC", "USB-C", "Scheduled control"] },
-    { name: "Link-Power 3", code: "LP3", model: "BP4SL3V3", features: ["LP3-enabled builds", "Battery", "USB-C", "Firmware-based controls"] },
+    { name: "Link-Power 3", code: "LP3", model: "BP4SL3V3", features: ["iOS app 2.0+", "Battery", "USB-C", "Firmware-based controls"] },
     { name: "Link-Power 2", code: "LP2", model: "BP4SL3V2", features: ["Battery", "DC", "USB-C", "DC bypass", "DC input"] },
     { name: "Link-Power+", code: "LP+", model: "BP4SL3", features: ["DC port control"] },
   ];

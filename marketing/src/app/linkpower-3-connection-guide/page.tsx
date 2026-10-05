@@ -5,7 +5,7 @@ export default function Page() {
   return <LP3Guide title="Connect your LinkPower 3" description="Nearby Bluetooth control and PeakDo’s internet-based monitoring are separate connections. Start with the one you need." topics={topics}>
     <section id="choose"><h2>Choose your connection</h2>
       <h3>LinkPower Companion: nearby Bluetooth</h3>
-      <p>Use an LP3-enabled build for battery readings and supported port controls from your phone. This connection does not bind your battery to PeakDo’s cloud account.</p>
+      <p>Use LinkPower for iOS 2.0 or later for battery readings and supported port controls from your phone. The Android app does not support LP3 yet. This Bluetooth connection does not bind your battery to PeakDo’s cloud account.</p>
       <h3>PeakDo’s web app: Bluetooth and Wi-Fi</h3>
       <p>Wi-Fi connects the battery through your Starlink network to PeakDo’s AWS service. Remote monitoring requires internet connectivity at the battery and on your phone. This is different from a local Starlink connection-status check in Companion. <a href={LP3_WIFI}>How PeakDo’s remote monitoring works ↗</a></p>
     </section>
@@ -27,7 +27,7 @@ export default function Page() {
     </section>
     <section id="help"><h2>If connection fails</h2>
       <ul>
-        <li><strong>Companion cannot see LP3:</strong> confirm your installed app version supports LP3, enable Bluetooth permission, and try nearby with other controllers closed.</li>
+        <li><strong>Companion cannot see LP3:</strong> confirm you have LinkPower for iOS 2.0 or later, enable Bluetooth permission, and try nearby with other controllers closed.</li>
         <li><strong>The official Wi-Fi workflow fails:</strong> use the illustrated guide above to check which step failed. Report account or binding errors to PeakDo; Companion does not manage those accounts.</li>
         <li><strong>USB-C data is missing:</strong> reconnect and allow fresh telemetry to arrive. See our <a href="/troubleshooting/#usb-c">port-reading checklist</a>.</li>
       </ul>

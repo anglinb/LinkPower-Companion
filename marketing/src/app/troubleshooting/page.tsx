@@ -26,7 +26,7 @@ const topics = [
       "Check that the app is connected to the battery and the main battery reading is updating.",
       "Connect a charger or device to the battery’s USB-C port. A disconnected or idle port may show no power flow.",
       "Leave the app open for a few moments while the port negotiates power and new readings arrive. If readings remain missing, reconnect to the battery.",
-      "For LinkPower 3, use an app build with LP3 support. Some LP3 firmware reports voltage and current without a USB-C temperature; a missing temperature alone does not mean the port is faulty.",
+      "For LinkPower 3, update to LinkPower for iOS 2.0 or later; the Android app does not support LP3 yet. Some LP3 firmware reports voltage and current without a USB-C temperature; a missing temperature alone does not mean the port is faulty.",
     ],
   },
   {

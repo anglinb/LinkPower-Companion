@@ -212,7 +212,7 @@ export default function ManualPage() {
 
         {/* ------------- 2. COMPATIBILITY ------------- */}
         <Chapter num="2" title="Compatibility">
-          <p>Device compatibility is shown below. LP3 requires a build with LP3 support; available controls depend on firmware capability flags.</p>
+          <p>Device compatibility is shown below. LP3 requires LinkPower for iOS 2.0 or later (not yet available on Android); available controls depend on firmware capability flags.</p>
           <table>
             <thead>
               <tr>
@@ -239,7 +239,7 @@ export default function ManualPage() {
                 <td>Link-Power 3</td>
                 <td>LP3</td>
                 <td><code>BP4SL3V3</code></td>
-                <td>LP3-enabled builds: battery and USB-C telemetry; controls depend on firmware flags</td>
+                <td>iOS app 2.0+: battery and USB-C telemetry; controls depend on firmware flags</td>
               </tr>
               <tr>
                 <td>Link-Power+</td>
