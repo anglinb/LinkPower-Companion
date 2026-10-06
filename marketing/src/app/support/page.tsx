@@ -7,9 +7,10 @@ import Script from "next/script";
    Static contact page. Server component (no "use client") so the metadata
    export is honored and the page is prerendered for `output: "export"`.
 
-   The form posts directly to formsubmit.co (no first-party server needed
-   in static export). When formsubmit redirects the user back here with
-   ?sent=1 the inline script swaps the form for a thank-you state.
+   The form posts straight to the mail-sync support inbox (no first-party
+   server needed in static export). A Cloudflare Turnstile check keeps bots
+   out; on success mail-sync redirects back here with ?sent=1 and the inline
+   script swaps the form for a thank-you state.
    ========================================================================= */
 
 const THEME = {
@@ -26,10 +27,13 @@ const THEME = {
   mist: "#F2F5F8",
 } as const;
 
-// formsubmit.co inbox. Mirrors the TodoAlarm site pattern — a single
-// human inbox, no ticketing system. Routed via formsubmit so we never
-// have to expose the address as plain text in the HTML.
-const SUPPORT_FORMSUBMIT_TARGET = "brianranglin@gmail.com";
+// Submissions land in support@linkpower.app in mail.brikki.org (the
+// `linkpower-support` form), so replies go out from that address. The
+// address never appears in the HTML.
+const SUPPORT_FORM_ENDPOINT =
+  "https://mail-sync.banglin.workers.dev/forms/brian/linkpower-support";
+// Turnstile widget "LinkPower support form" (public site key).
+const TURNSTILE_SITE_KEY = "0x4AAAAAAFO86sJJgAkKsSBd";
 const SITE_URL = "https://linkpower.app";
 
 export const metadata: Metadata = {
@@ -84,18 +88,11 @@ export default function SupportPage() {
 
         <form
           id="support-form"
-          action={`https://formsubmit.co/${SUPPORT_FORMSUBMIT_TARGET}`}
+          action={SUPPORT_FORM_ENDPOINT}
           method="POST"
           style={formStyle}
         >
-          {/* formsubmit.co config */}
-          <input
-            type="hidden"
-            name="_subject"
-            value="LinkPower Companion support request"
-          />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="true" />
+          {/* Where mail-sync sends the browser after a successful send. */}
           <input
             type="hidden"
             name="_next"
@@ -156,6 +153,8 @@ export default function SupportPage() {
             />
           </Field>
 
+          <div className="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY} />
+
           <button type="submit" className="lp-pressable" style={submitStyle}>
             Send message
           </button>
@@ -179,6 +178,11 @@ export default function SupportPage() {
 
         <LegalFooter />
       </article>
+
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        strategy="afterInteractive"
+      />
 
       {/* If we redirected back here with ?sent=1, show the thank-you
           state. Inline script keeps this working on a static export
