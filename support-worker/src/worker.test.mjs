@@ -51,3 +51,19 @@ test('storage failure cannot report success or notify',async()=>{
  const s=setup();s.env.DIAGNOSTICS.put=async()=>{throw new Error('test storage unavailable')};
  assert.equal((await worker.fetch(request(payload()),s.env,s.ctx)).status,503);assert.equal(s.emails.length,0);assert.equal(s.sql.prepare('SELECT count(*) AS n FROM support_requests').get().n,0);
 });
+test('files requests in the mail-sync inbox with diagnostics, and falls back to email when it is down',async()=>{
+ const s=setup(),p=payload(),posts=[];
+ s.env.DIAGNOSTICS.get=async(k)=>s.objects.has(k)?{body:s.objects.get(k),text:async()=>new TextDecoder().decode(s.objects.get(k))}:null;
+ s.env.MAIL_SYNC_FORM_TOKEN='form-token';
+ s.env.MAIL_SYNC={async fetch(url,init){posts.push({url,init});return new Response('{}',{status:201})}};
+ assert.equal((await worker.fetch(request(p),s.env,s.ctx)).status,201);await s.flush();
+ assert.equal(s.emails.length,0);assert.equal(posts.length,1);
+ assert.equal(posts[0].url,'https://mail-sync/forms/brian/linkpower-support');
+ assert.equal(posts[0].init.headers.Authorization,'Bearer form-token');assert.equal(posts[0].init.headers['Idempotency-Key'],p.id);
+ const body=JSON.parse(posts[0].init.body);
+ assert.equal(body.email,p.email);assert.equal(body.message,p.message);assert.deepEqual(body.diagnostics,p.diagnostics);
+ assert.ok(s.sql.prepare('SELECT notification_sent_at FROM support_requests').get().notification_sent_at);
+ const d=setup(),q=payload();
+ d.env.MAIL_SYNC_FORM_TOKEN='form-token';d.env.MAIL_SYNC={async fetch(){return new Response('{}',{status:500})}};
+ assert.equal((await worker.fetch(request(q),d.env,d.ctx)).status,201);await d.flush();assert.equal(d.emails.length,1);
+});

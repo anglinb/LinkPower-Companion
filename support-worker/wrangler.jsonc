@@ -6,6 +6,8 @@
  "vars":{"ACCOUNT_DELETION_WINDOW_DAYS":"30"},
  "d1_databases":[{"binding":"DB","database_name":"linkpower-support","database_id":"19360cf8-5b8a-471c-9d5f-383a595b0405"}],
  "r2_buckets":[{"binding":"DIAGNOSTICS","bucket_name":"linkpower-support-diagnostics"}],
+ // Support requests go to the mail-sync inbox (secret MAIL_SYNC_FORM_TOKEN); email is the fallback.
+ "services":[{"binding":"MAIL_SYNC","service":"mail-sync"}],
  "send_email":[{"name":"EMAIL","destination_address":"brianranglin@gmail.com"}],
  "triggers":{"crons":["*/10 * * * *"]},
  "observability":{"enabled":true}

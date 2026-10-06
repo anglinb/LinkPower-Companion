@@ -26,6 +26,22 @@ export async function downloadToken(env, id, expires) {
  const key=await crypto.subtle.importKey('raw',encoder.encode(env.SUPPORT_LINK_KEY),{name:'HMAC',hash:'SHA-256'},false,['sign']);
  return Array.from(new Uint8Array(await crypto.subtle.sign('HMAC',key,encoder.encode(`${id}:${expires}`))),b=>b.toString(16).padStart(2,'0')).join('');
 }
+// Files the request in the mail-sync inbox (mail.brikki.org) as mail from the customer to support@linkpower.app,
+// with the diagnostics attached. Returns false when the inbox isn't configured, so the email fallback runs.
+async function deliverToInbox(env, row, url) {
+ if(!env.MAIL_SYNC||!env.MAIL_SYNC_FORM_TOKEN) return false;
+ let diagnostics=null;
+ if(row.payload_bytes<=10*1024*1024) {
+  const object=await env.DIAGNOSTICS.get(row.object_key);
+  if(object) { try { diagnostics=JSON.parse(await object.text()).diagnostics??null; } catch {} }
+ }
+ const res=await env.MAIL_SYNC.fetch(`https://mail-sync/forms/${env.MAIL_SYNC_ACCOUNT||'brian'}/linkpower-support`,{method:'POST',
+  headers:{'Content-Type':'application/json',Authorization:`Bearer ${env.MAIL_SYNC_FORM_TOKEN}`,'Idempotency-Key':row.id},
+  body:JSON.stringify({email:row.email,message:row.message,appUserId:row.app_user_id,request:row.id,
+   diagnosticsLink:url,diagnosticsSize:`${row.payload_bytes} bytes`,...(diagnostics?{diagnostics}:{})})});
+ if(!res.ok) throw new Error(`mail-sync returned ${res.status}`);
+ return true;
+}
 async function notify(env, row) {
  const now=Date.now();
  const claim=await env.DB.prepare('UPDATE support_requests SET notification_claimed_at=?, notification_attempts=notification_attempts+1 WHERE id=? AND notification_sent_at IS NULL AND (notification_claimed_at IS NULL OR notification_claimed_at<?) RETURNING id').bind(now,row.id,now-300000).first();
@@ -34,7 +50,10 @@ async function notify(env, row) {
   const expires=now+7*86400000;
   const token=await downloadToken(env,row.id,expires);
   const url=`https://linkpower.app/api/support/${row.id}/diagnostics?expires=${expires}&token=${token}`;
-  await env.EMAIL.send({from:'support@linkpower.app',to:'brianranglin@gmail.com',replyTo:row.email,
+  let delivered=false;
+  try { delivered=await deliverToInbox(env,row,url); }
+  catch(error) { console.error('Support inbox delivery failed; emailing instead',row.id,String(error)); }
+  if(!delivered) await env.EMAIL.send({from:'support@linkpower.app',to:'brianranglin@gmail.com',replyTo:row.email,
    subject:`LinkPower support request ${row.id}`,
    text:`Email: ${row.email}\nSuperwall appUserId: ${row.app_user_id}\nRequest: ${row.id}\n\n${row.message}\n\nPrivate diagnostics (link expires in 7 days; keep private):\n${url}\n\nSize: ${row.payload_bytes} bytes\n`});
   await env.DB.prepare('UPDATE support_requests SET notification_sent_at=?, notification_error=NULL WHERE id=?').bind(Date.now(),row.id).run();
