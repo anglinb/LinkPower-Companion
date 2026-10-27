@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...blogEntries,
-    ...["linkpower-3-quick-start", "linkpower-3-connection-guide", "troubleshooting"].map((slug) => ({
+    ...["linkpower-3-quick-start", "linkpower-3-connection-guide", "linkpower-ultra-quick-start", "linkpower-ultra-connection-guide", "linkpower-pod-quick-start", "linkpower-pod-connection-guide", "troubleshooting"].map((slug) => ({
       url: `${SITE_URL}/${slug}/`, lastModified, changeFrequency: "monthly" as const, priority: 0.8,
     })),
     {

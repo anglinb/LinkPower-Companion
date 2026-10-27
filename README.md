@@ -2,7 +2,7 @@
 
 [Website](https://linkpower.app) · [App Store](https://apps.apple.com/us/app/linkpower-companion/id6762404390) · [Privacy](https://linkpower.app/privacy) · [Terms](https://linkpower.app/terms)
 
-The [LinkPower app](https://linkpower.app) is a native iOS companion for the PeakDo Link-Power family of portable power stations (LP1, LP2, LP+). Built with SwiftUI and CoreBluetooth, the LinkPower app gives you live battery telemetry, DC port control, USB-C power-limit configuration, and on-device scheduling — all over Bluetooth, with zero third-party dependencies.
+The [LinkPower app](https://linkpower.app) is a native iOS companion for the PeakDo Link-Power family of portable power stations (LP1, LP2, LP3, Pod, Ultra, LP+). Built with SwiftUI and CoreBluetooth, the LinkPower app gives you live battery telemetry, DC port control, USB-C power-limit configuration, and on-device scheduling — all over Bluetooth, with zero third-party dependencies.
 
 [<img src="marketing/public/mockup.png" alt="LinkPower app on iPhone" width="640">](https://linkpower.app)
 
@@ -43,7 +43,7 @@ Learn more at <https://linkpower.app>.
 
 ## Features
 
-- **BLE Device Connection** - Scan, connect, auto-reconnect to Link-Power devices (LP1, LP2, LP+)
+- **BLE Device Connection** - Scan, connect, auto-reconnect to Link-Power devices (LP1, LP2, LP3, Pod, Ultra, LP+)
 - **Real-Time Monitoring** - Live battery level, capacity, voltage, current, and remaining time via BLE notifications
 - **DC Port Control** - Enable/disable DC output, monitor power/voltage/current, DC bypass toggle
 - **USB-C Port Monitoring** - Charging/discharging status, power readings, temperature display, output control
@@ -58,6 +58,10 @@ Learn more at <https://linkpower.app>.
 |--------|-------------|--------------|
 | Link-Power 1 (LP1) | `BP4SL3V1` | Battery, DC, USB-C, shutdown, scheduled control |
 | Link-Power 2 (LP2) | `BP4SL3V2` | Battery, DC, USB-C, DC bypass, DC input |
+| Link-Power 3 (LP3) | `BP4SL3V3` | LP3 protocol; features from firmware flags, Wi-Fi & cloud |
+| Link-Power Pod | `BP4SL3V4` | LP3 protocol (unverified on hardware) |
+| Link-Power Ultra | `BP4SL3V6` | LP3 protocol (unverified on hardware) |
+| Link-Power Max | `BP4SL3V7` | LP3 protocol (unreleased; unverified) |
 | Link-Power+ (LP+) | `BP4SL3` | DC port control |
 
 ## Requirements

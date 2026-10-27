@@ -27,7 +27,7 @@ export default function Page() {
       <p>Use the official manual for your firmware’s button functions and bypass settings. Its descriptions of sleep and shutdown differ between sections, so this guide does not treat those long-press timings as interchangeable.</p>
     </section>
     <section id="connect"><h2>Connect your phone</h2>
-      <p>In a LinkPower Companion build with LP3 support, allow Bluetooth, scan for your battery, and connect. Check the dashboard for battery and port readings. LP3 support has been verified on a physical device in our development build; availability depends on your installed version.</p>
+      <p>In LinkPower Companion for iOS 2.0 or later, allow Bluetooth, scan for your battery, and connect. Check the dashboard for battery and port readings. The Android app does not support LP3 yet.</p>
       <p>PeakDo’s Wi-Fi account binding is a separate workflow. Follow our <a href="/linkpower-3-connection-guide/">LP3 Bluetooth &amp; Wi-Fi connection guide</a> for the official web app.</p>
     </section>
     <section id="specs"><h2>LP3 specifications</h2>
@@ -43,7 +43,7 @@ export default function Page() {
     </section>
     <section id="faq"><h2>Questions &amp; help</h2>
       <details><summary>Why is USB-C temperature missing?</summary><p>Some LP3 packets omit USB-C temperature. Our parser accepts voltage and current without that optional reading. A missing temperature alone does not mean charging has stopped.</p></details>
-      <details><summary>Does Companion include PeakDo’s Wi-Fi cloud service?</summary><p>No. The LP3 integration described here uses Bluetooth. PeakDo’s remote-device service is accessed through its own web app.</p></details>
+      <details><summary>Does Companion include PeakDo’s Wi-Fi cloud service?</summary><p>Optionally, on iOS. In LinkPower for iOS 2.0 or later, you can sign in to your PeakDo account to link supported batteries and monitor them remotely. Nearby Bluetooth monitoring does not require an account, and PeakDo’s own web app remains available.</p></details>
       <details><summary>Where should I start if it won’t connect?</summary><p>Open our <a href="/troubleshooting/#bluetooth">Bluetooth troubleshooting steps</a>. For a missing USB-C reading, use the <a href="/troubleshooting/#usb-c">USB-C checklist</a>.</p></details>
     </section>
   </LP3Guide>;

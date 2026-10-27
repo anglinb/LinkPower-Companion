@@ -568,7 +568,7 @@ function Body() {
       <Toc />
 
       <H2 id="introduction">Introduction</H2>
-      <p>Using the newer model? See the <a href="/linkpower-3-quick-start/">LinkPower 3 quick-start guide</a>.</p>
+      <p>Using a newer model? See the <a href="/linkpower-3-quick-start/">LinkPower 3</a>, <a href="/linkpower-ultra-quick-start/">Ultra</a>, or <a href="/linkpower-pod-quick-start/">Pod</a> quick-start guide.</p>
       <P>
         Meet the <strong>LinkPower 2</strong> — a compact, high-efficiency
         power bank designed exclusively for the Starlink<sup>®</sup> Mini.
