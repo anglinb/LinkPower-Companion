@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Troubleshooting — LinkPower Companion",
-  description: "Help with Bluetooth connections, LinkPower 3 USB-C readings, Starlink status, and purchases.",
+  description: "Help with Bluetooth connections, LinkPower 3, Ultra, and Pod readings, Starlink status, and purchases.",
   alternates: { canonical: "https://linkpower.app/troubleshooting/" },
 };
 
@@ -26,7 +26,7 @@ const topics = [
       "Check that the app is connected to the battery and the main battery reading is updating.",
       "Connect a charger or device to the battery’s USB-C port. A disconnected or idle port may show no power flow.",
       "Leave the app open for a few moments while the port negotiates power and new readings arrive. If readings remain missing, reconnect to the battery.",
-      "For LinkPower 3, update to LinkPower for iOS 2.0 or later; the Android app does not support LP3 yet. Some LP3 firmware reports voltage and current without a USB-C temperature; a missing temperature alone does not mean the port is faulty.",
+      "For LinkPower 3, update to LinkPower for iOS 2.0 or later; the Android app does not support LP3 yet. LinkPower Ultra and Pod need LinkPower for iOS 2.0.1 or later, currently in beta. Some LP3 firmware reports voltage and current without a USB-C temperature; a missing temperature alone does not mean the port is faulty.",
     ],
   },
   {
@@ -83,7 +83,7 @@ export default function TroubleshootingPage() {
         ))}
         <aside className={styles.support}>
           <h2>Still stuck?</h2>
-          <p>Setting up LP3? See the <a href="/linkpower-3-quick-start/">quick start</a> or <a href="/linkpower-3-connection-guide/">Bluetooth and Wi-Fi guide</a>.</p>
+          <p>Setting up LP3? See the <a href="/linkpower-3-quick-start/">quick start</a> or <a href="/linkpower-3-connection-guide/">Bluetooth and Wi-Fi guide</a>. For the Ultra or Pod, see the <a href="/linkpower-ultra-quick-start/">Ultra</a> or <a href="/linkpower-pod-quick-start/">Pod</a> quick start.</p>
           <p>Send your battery model, firmware version if available, app version, phone model, and a screenshot of what you see. Tell us what you’ve already tried.</p>
           <a href="/support/">Contact support →</a>
         </aside>

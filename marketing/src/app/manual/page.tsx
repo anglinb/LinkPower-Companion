@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "LinkPower App",
     title: "User Manual — Link-Power Companion (PDF)",
     description:
-      "Complete user manual for Link-Power Companion (LP1, LP2, LP3, LP+). Connecting, dashboard, DC scheduling, power limits, troubleshooting.",
+      "Complete user manual for Link-Power Companion (LP1, LP2, LP3, Ultra, Pod, LP+). Connecting, dashboard, DC scheduling, power limits, troubleshooting.",
     url: `${SITE_URL}/manual/`,
     locale: "en_US",
     images: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "User Manual — Link-Power Companion (PDF)",
     description:
-      "Complete user manual for Link-Power Companion (LP1, LP2, LP3, LP+). Connecting, dashboard, DC scheduling, power limits, troubleshooting.",
+      "Complete user manual for Link-Power Companion (LP1, LP2, LP3, Ultra, Pod, LP+). Connecting, dashboard, DC scheduling, power limits, troubleshooting.",
     images: ["/og.png"],
   },
 };
@@ -140,7 +140,7 @@ export default function ManualPage() {
               </div>
               <div>
                 <div className="cover-meta-label">Devices</div>
-                <div className="cover-meta-value">LP1 · LP2 · LP3 · LP+</div>
+                <div className="cover-meta-value">LP1 · LP2 · LP3 · Ultra · Pod · LP+</div>
               </div>
             </div>
             <div className="cover-disclaimer">
@@ -183,8 +183,8 @@ export default function ManualPage() {
           <p>
             <strong>Link-Power Companion</strong> is a native phone app
             for the PeakDo Link-Power family of portable power
-            stations: <strong>LP1</strong>, <strong>LP2</strong>, <strong>LP3</strong>, and{" "}
-            <strong>LP+</strong>. It connects directly to your device
+            stations: <strong>LP1</strong>, <strong>LP2</strong>, <strong>LP3</strong>,{" "}
+            <strong>Ultra</strong>, <strong>Pod</strong>, and <strong>LP+</strong>. It connects directly to your device
             over Bluetooth Low Energy (BLE), gives you live battery
             telemetry, and lets you control DC output, USB-C power
             limits, and scheduled on/off behaviour from your phone.
@@ -212,7 +212,7 @@ export default function ManualPage() {
 
         {/* ------------- 2. COMPATIBILITY ------------- */}
         <Chapter num="2" title="Compatibility">
-          <p>Device compatibility is shown below. LP3 requires LinkPower for iOS 2.0 or later (not yet available on Android); available controls depend on firmware capability flags.</p>
+          <p>Device compatibility is shown below. LP3 requires LinkPower for iOS 2.0 or later; Ultra and Pod require iOS 2.0.1 or later, currently in beta. None of these are available on Android yet. Available controls depend on firmware capability flags.</p>
           <table>
             <thead>
               <tr>
@@ -240,6 +240,18 @@ export default function ManualPage() {
                 <td>LP3</td>
                 <td><code>BP4SL3V3</code></td>
                 <td>iOS app 2.0+: battery and USB-C telemetry; controls depend on firmware flags</td>
+              </tr>
+              <tr>
+                <td>Link-Power Ultra</td>
+                <td>Ultra</td>
+                <td><code>BP4SL3V6</code></td>
+                <td>iOS app 2.0.1+ (beta): same protocol and controls as LP3</td>
+              </tr>
+              <tr>
+                <td>Link-Power Pod</td>
+                <td>Pod</td>
+                <td><code>BP4SL3V4</code></td>
+                <td>iOS app 2.0.1+ (beta): same protocol and controls as LP3</td>
               </tr>
               <tr>
                 <td>Link-Power+</td>
